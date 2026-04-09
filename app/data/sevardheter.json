@@ -1,0 +1,68 @@
+[
+  {
+    "id": "s1",
+    "namn": "Sofiero Slott",
+    "typ": "Slott & trädgård",
+    "adress": "Sofierovägen 131, 254 82 Helsingborg",
+    "bild": "https://picsum.photos/800/500?random=1",
+    "intro": "Ett kungligt slott med prisbelönta trädgårdar och fantastisk utsikt över Öresund.",
+    "utmaningar": [
+      {
+        "id": "s1-u1",
+        "text": "Hitta en ros som du tycker är extra fin"
+      },
+      {
+        "id": "s1-u2",
+        "text": "Stå stilla i trädgården i 30 sekunder och lyssna"
+      },
+      {
+        "id": "s1-u3",
+        "text": "Läs en skylt om slottets historia"
+      }
+    ]
+  },
+  {
+    "id": "s2",
+    "namn": "Turning Torso",
+    "typ": "Arkitektur & landmärke",
+    "adress": "Lilla Varvsgatan 14, 211 15 Malmö",
+    "bild": "https://picsum.photos/800/500?random=2",
+    "intro": "Nordens högsta byggnad och ett ikoniskt landmärke i Malmö.",
+    "utmaningar": [
+      {
+        "id": "s2-u1",
+        "text": "Titta upp hela vägen till toppen"
+      },
+      {
+        "id": "s2-u2",
+        "text": "Fundera på varför huset är vridet"
+      },
+      {
+        "id": "s2-u3",
+        "text": "Ta reda på hur högt huset är"
+      }
+    ]
+  },
+  {
+    "id": "s3",
+    "namn": "Ales stenar",
+    "typ": "Historia & natur",
+    "adress": "Kåseberga, 271 78 Löderup",
+    "bild": "https://picsum.photos/800/500?random=3",
+    "intro": "En mystisk skeppssättning från järnåldern med vidsträckt havsutsikt.",
+    "utmaningar": [
+      {
+        "id": "s3-u1",
+        "text": "Gå runt hela stenskeppets form"
+      },
+      {
+        "id": "s3-u2",
+        "text": "Tänk på vem som kan ha byggt detta"
+      },
+      {
+        "id": "s3-u3",
+        "text": "Hitta den sten som ser störst ut"
+      }
+    ]
+  }
+]
