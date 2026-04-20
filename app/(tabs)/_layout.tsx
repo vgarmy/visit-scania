@@ -1,6 +1,5 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-import "../global.css";
 
 export default function TabsLayout() {
   return (
@@ -37,7 +36,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="sevardheter/[id]"
         options={{
-          href: null,  
+          href: null,   
         }}
       />
     </Tabs>

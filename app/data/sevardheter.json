@@ -7,18 +7,9 @@
     "bild": "https://picsum.photos/800/500?random=1",
     "intro": "Ett kungligt slott med prisbelönta trädgårdar och fantastisk utsikt över Öresund.",
     "utmaningar": [
-      {
-        "id": "s1-u1",
-        "text": "Hitta en ros som du tycker är extra fin"
-      },
-      {
-        "id": "s1-u2",
-        "text": "Stå stilla i trädgården i 30 sekunder och lyssna"
-      },
-      {
-        "id": "s1-u3",
-        "text": "Läs en skylt om slottets historia"
-      }
+      { "id": "s1-u1", "text": "Hitta en ros som du tycker är extra fin" },
+      { "id": "s1-u2", "text": "Stå stilla i trädgården i 30 sekunder och lyssna" },
+      { "id": "s1-u3", "text": "Läs en skylt om slottets historia" }
     ]
   },
   {
@@ -29,18 +20,10 @@
     "bild": "https://picsum.photos/800/500?random=2",
     "intro": "Nordens högsta byggnad och ett ikoniskt landmärke i Malmö.",
     "utmaningar": [
-      {
-        "id": "s2-u1",
-        "text": "Titta upp hela vägen till toppen"
-      },
-      {
-        "id": "s2-u2",
-        "text": "Fundera på varför huset är vridet"
-      },
-      {
-        "id": "s2-u3",
-        "text": "Ta reda på hur högt huset är"
-      }
+      { "id": "s2-u1", "text": "Titta upp hela vägen till toppen" },
+      { "id": "s2-u2", "text": "Fundera på varför huset är vridet" },
+      { "id": "s2-u3", "text": "Ta reda på hur högt huset är" },
+      { "id": "s2-u4", "text": "Ta reda på hur många våningar huset har" }
     ]
   },
   {
@@ -51,18 +34,460 @@
     "bild": "https://picsum.photos/800/500?random=3",
     "intro": "En mystisk skeppssättning från järnåldern med vidsträckt havsutsikt.",
     "utmaningar": [
-      {
-        "id": "s3-u1",
-        "text": "Gå runt hela stenskeppets form"
-      },
-      {
-        "id": "s3-u2",
-        "text": "Tänk på vem som kan ha byggt detta"
-      },
-      {
-        "id": "s3-u3",
-        "text": "Hitta den sten som ser störst ut"
-      }
+      { "id": "s3-u1", "text": "Gå runt hela stenskeppets form" },
+      { "id": "s3-u2", "text": "Tänk på vem som kan ha byggt detta" },
+      { "id": "s3-u3", "text": "Hitta den sten som ser störst ut" }
+    ]
+  },
+  {
+    "id": "s4",
+    "namn": "Kullaberg",
+    "typ": "Natur & utsikt",
+    "adress": "Italienska vägen 323, 263 77 Mölle",
+    "bild": "https://picsum.photos/800/500?random=4",
+    "intro": "Dramatiska klippor, vandringsleder och vidsträckt utsikt över havet.",
+    "utmaningar": [
+      { "id": "s4-u1", "text": "Hitta en plats med utsikt över havet" },
+      { "id": "s4-u2", "text": "Lyssna efter fåglar i 20 sekunder" },
+      { "id": "s4-u3", "text": "Plocka upp en sten som ser speciell ut" }
+    ]
+  },
+  {
+    "id": "s5",
+    "namn": "Lunds domkyrka",
+    "typ": "Historia & sevärdhet",
+    "adress": "Kyrkogatan 6, 222 22 Lund",
+    "bild": "https://picsum.photos/800/500?random=5",
+    "intro": "En imponerande domkyrka från 1100-talet mitt i Lunds centrum.",
+    "utmaningar": [
+      { "id": "s5-u1", "text": "Hitta den astronomiska klockan" },
+      { "id": "s5-u2", "text": "Titta upp i taket och studera detaljerna" },
+      { "id": "s5-u3", "text": "Gå ett varv runt byggnaden" }
+    ]
+  },
+  {
+    "id": "s6",
+    "namn": "Stenshuvud Nationalpark",
+    "typ": "Natur & vandring",
+    "adress": "607 97 Kivik",
+    "bild": "https://picsum.photos/800/500?random=6",
+    "intro": "Nationalpark med skog, strand och utsikt från toppen av Stenshuvud.",
+    "utmaningar": [
+      { "id": "s6-u1", "text": "Gå till utsiktsplatsen på toppen" },
+      { "id": "s6-u2", "text": "Hitta något som luktar gott i naturen" },
+      { "id": "s6-u3", "text": "Stå stilla och lyssna på vinden" }
+    ]
+  },
+  {
+    "id": "s7",
+    "namn": "Kärnan",
+    "typ": "Historia & utsikt",
+    "adress": "Slottshagsgatan, 250 07 Helsingborg",
+    "bild": "https://picsum.photos/800/500?random=7",
+    "intro": "Det medeltida tornet som är det sista som finns kvar av Helsingborgs slott.",
+    "utmaningar": [
+      { "id": "s7-u1", "text": "Räkna hur många trappsteg du går" },
+      { "id": "s7-u2", "text": "Titta ut över staden från toppen" },
+      { "id": "s7-u3", "text": "Hitta en flagga i närheten" },
+      { "id": "s7-u4", "text": "Leta efter något riktigt gammalt i muren" }
+    ]
+  },
+  {
+    "id": "s8",
+    "namn": "Folkets Park Malmö",
+    "typ": "Park & nöje",
+    "adress": "Amiralsgatan 35, 214 37 Malmö",
+    "bild": "https://picsum.photos/800/500?random=8",
+    "intro": "En livlig park med lekplatser, grönområden och aktiviteter.",
+    "utmaningar": [
+      { "id": "s8-u1", "text": "Hitta en lekplats" },
+      { "id": "s8-u2", "text": "Sätt dig på en bänk i 20 sekunder" }
+    ]
+  },
+  {
+    "id": "s9",
+    "namn": "Ven - Kyrkbacken",
+    "typ": "Ö & natur",
+    "adress": "Kyrkbacken, 260 13 Sankt Ibb",
+    "bild": "https://picsum.photos/800/500?random=9",
+    "intro": "Charmig by på Ven med utsikt över havet och små gränder.",
+    "utmaningar": [
+      { "id": "s9-u1", "text": "Titta ut över havet" },
+      { "id": "s9-u2", "text": "Hitta ett hus i en ovanlig färg" },
+      { "id": "s9-u3", "text": "Lyssna efter måsar" }
+    ]
+  },
+  {
+    "id": "s10",
+    "namn": "Ribersborgsstranden",
+    "typ": "Strand & natur",
+    "adress": "Limhamnsvägen, 217 59 Malmö",
+    "bild": "https://picsum.photos/800/500?random=10",
+    "intro": "Populär strand i Malmö med lång brygga och utsikt mot Öresundsbron.",
+    "utmaningar": [
+      { "id": "s10-u1", "text": "Känn på vattnet" },
+      { "id": "s10-u2", "text": "Hitta tre olika stenar" },
+      { "id": "s10-u3", "text": "Titta mot bron" },
+      { "id": "s10-u4", "text": "Gå femtio steg längs stranden" },
+      { "id": "s10-u5", "text": "Lyssna på vågorna i 15 sekunder" }
+    ]
+  },
+  {
+    "id": "s11",
+    "namn": "Dalby Söderskog",
+    "typ": "Natur & skog",
+    "adress": "Dalby Söderskog, 247 91 Dalby",
+    "bild": "https://picsum.photos/800/500?random=11",
+    "intro": "En gammal lövskog med lugn stämning och många vandringsstigar.",
+    "utmaningar": [
+      { "id": "s11-u1", "text": "Hitta ett riktigt stort träd" },
+      { "id": "s11-u2", "text": "Lyssna efter fåglar" },
+      { "id": "s11-u3", "text": "Titta upp i trädkronorna" }
+    ]
+  },
+  {
+    "id": "s12",
+    "namn": "Hovs Hallar",
+    "typ": "Natur & klippor",
+    "adress": "Hovshallavägen 160, 269 91 Båstad",
+    "bild": "https://picsum.photos/800/500?random=12",
+    "intro": "Dramatiska klippor och stenstränder vid Hallandsåsen.",
+    "utmaningar": [
+      { "id": "s12-u1", "text": "Hitta en rund sten" },
+      { "id": "s12-u2", "text": "Titta ut över havet" },
+      { "id": "s12-u3", "text": "Gå försiktigt ner mot stranden" },
+      { "id": "s12-u4", "text": "Lyssna på vinden" }
+    ]
+  },
+  {
+    "id": "s13",
+    "namn": "Kungsparken Malmö",
+    "typ": "Park & natur",
+    "adress": "Slottsgatan, 211 33 Malmö",
+    "bild": "https://picsum.photos/800/500?random=13",
+    "intro": "Grön park med kanaler, broar och stora träd.",
+    "utmaningar": [
+      { "id": "s13-u1", "text": "Gå över en bro" },
+      { "id": "s13-u2", "text": "Hitta vatten" },
+      { "id": "s13-u3", "text": "Sätt dig i gräset" },
+      { "id": "s13-u4", "text": "Titta på en fågel" }
+    ]
+  },
+  {
+    "id": "s14",
+    "namn": "Skanörs hamn",
+    "typ": "Hamn & kust",
+    "adress": "Hamnen, 239 30 Skanör",
+    "bild": "https://picsum.photos/800/500?random=14",
+    "intro": "Liten hamn med båtar, strand och kustkänsla.",
+    "utmaningar": [
+      { "id": "s14-u1", "text": "Räkna båtar" },
+      { "id": "s14-u2", "text": "Lyssna på vattnet" }
+    ]
+  },
+  {
+    "id": "s15",
+    "namn": "Falsterbo Strand",
+    "typ": "Strand & natur",
+    "adress": "Falsterbo strand, 239 40 Falsterbo",
+    "bild": "https://picsum.photos/800/500?random=15",
+    "intro": "Lång sandstrand med klart vatten och öppna vyer.",
+    "utmaningar": [
+      { "id": "s15-u1", "text": "Gå ner till vattnet" },
+      { "id": "s15-u2", "text": "Hitta ett snäckskal" },
+      { "id": "s15-u3", "text": "Titta ut över horisonten" }
+    ]
+  },
+  {
+    "id": "s16",
+    "namn": "Söderåsen Nationalpark",
+    "typ": "Natur & vandring",
+    "adress": "Skäralid 747, 264 53 Ljungbyhed",
+    "bild": "https://picsum.photos/800/500?random=16",
+    "intro": "Djupa dalar, bokskog och vandringsleder i varierad natur.",
+    "utmaningar": [
+      { "id": "s16-u1", "text": "Gå en bit på leden" },
+      { "id": "s16-u2", "text": "Lyssna på skogen" },
+      { "id": "s16-u3", "text": "Hitta en utsiktsplats" },
+      { "id": "s16-u4", "text": "Titta ner i dalen" }
+    ]
+  },
+  {
+    "id": "s17",
+    "namn": "Mölle hamn",
+    "typ": "Hamn & kust",
+    "adress": "Mölle hamn, 263 77 Mölle",
+    "bild": "https://picsum.photos/800/500?random=17",
+    "intro": "Liten hamn omgiven av kullar och hav.",
+    "utmaningar": [
+      { "id": "s17-u1", "text": "Titta på båtarna" },
+      { "id": "s17-u2", "text": "Lyssna på vågorna" }
+    ]
+  },
+  {
+    "id": "s18",
+    "namn": "Ystad gamla stad",
+    "typ": "Stad & historia",
+    "adress": "Stortorget, 271 43 Ystad",
+    "bild": "https://picsum.photos/800/500?random=18",
+    "intro": "Kullerstensgator och färgglada korsvirkeshus.",
+    "utmaningar": [
+      { "id": "s18-u1", "text": "Hitta ett korsvirkeshus" },
+      { "id": "s18-u2", "text": "Gå på en kullerstensgata" },
+      { "id": "s18-u3", "text": "Titta på ett torg" }
+    ]
+  },
+  {
+    "id": "s19",
+    "namn": "Kivik hamn",
+    "typ": "Hamn & kust",
+    "adress": "Hamnen, 277 30 Kivik",
+    "bild": "https://picsum.photos/800/500?random=19",
+    "intro": "Liten hamn vid Österlen med närhet till strand.",
+    "utmaningar": [
+      { "id": "s19-u1", "text": "Titta ut över havet" },
+      { "id": "s19-u2", "text": "Räkna båtar" },
+      { "id": "s19-u3", "text": "Gå längs piren" }
+    ]
+  },
+  {
+    "id": "s20",
+    "namn": "Pildammsparken",
+    "typ": "Park & natur",
+    "adress": "Pildammsvägen, 217 45 Malmö",
+    "bild": "https://picsum.photos/800/500?random=20",
+    "intro": "Stor park med dammar och öppna gräsytor.",
+    "utmaningar": [
+      { "id": "s20-u1", "text": "Gå runt dammen" },
+      { "id": "s20-u2", "text": "Hitta en fågel" },
+      { "id": "s20-u3", "text": "Sätt dig på en bänk" }
+    ]
+  },
+  {
+    "id": "s21",
+    "namn": "Båstad hamn",
+    "typ": "Hamn & stad",
+    "adress": "Småbåtshamnen, 269 33 Båstad",
+    "bild": "https://picsum.photos/800/500?random=21",
+    "intro": "Somrig hamn med strand och promenadstråk.",
+    "utmaningar": [
+      { "id": "s21-u1", "text": "Gå längs vattnet" },
+      { "id": "s21-u2", "text": "Titta på båtar" }
+    ]
+  },
+  {
+    "id": "s22",
+    "namn": "Lomma strand",
+    "typ": "Strand & kust",
+    "adress": "Strandvägen, 234 33 Lomma",
+    "bild": "https://picsum.photos/800/500?random=22",
+    "intro": "Barnvänlig strand med långgrunt vatten.",
+    "utmaningar": [
+      { "id": "s22-u1", "text": "Gå i sanden" },
+      { "id": "s22-u2", "text": "Känn på vattnet" },
+      { "id": "s22-u3", "text": "Hitta något i sanden" }
+    ]
+  },
+  {
+    "id": "s23",
+    "namn": "Öresundsbron utsiktspunkt",
+    "typ": "Utsikt & landmärke",
+    "adress": "Barsebäckshamn, 246 57 Barsebäck",
+    "bild": "https://picsum.photos/800/500?random=23",
+    "intro": "Bra plats för att se Öresundsbron och trafiken över sundet.",
+    "utmaningar": [
+      { "id": "s23-u1", "text": "Försök se bron tydligt i horisonten" },
+      { "id": "s23-u2", "text": "Lyssna på vinden från havet" },
+      { "id": "s23-u3", "text": "Ta en panoramavy med blicken" }
+    ]
+  },
+  {
+    "id": "s24",
+    "namn": "Lilla Torg",
+    "typ": "Stad & torg",
+    "adress": "Lilla Torg, 211 34 Malmö",
+    "bild": "https://picsum.photos/800/500?random=24",
+    "intro": "Livligt torg med restauranger och historisk atmosfär i Malmö.",
+    "utmaningar": [
+      { "id": "s24-u1", "text": "Hitta en uteservering" },
+      { "id": "s24-u2", "text": "Läs ett gatunamn runt torget" }
+    ]
+  },
+  {
+    "id": "s25",
+    "namn": "Stortorget Lund",
+    "typ": "Stad & historia",
+    "adress": "Stortorget, 222 23 Lund",
+    "bild": "https://picsum.photos/800/500?random=25",
+    "intro": "Historiskt torg mitt i Lund med stadsliv och gamla byggnader.",
+    "utmaningar": [
+      { "id": "s25-u1", "text": "Hitta en historisk byggnad" },
+      { "id": "s25-u2", "text": "Sätt dig och observera folk" },
+      { "id": "s25-u3", "text": "Gå ett varv runt torget" }
+    ]
+  },
+  {
+    "id": "s26",
+    "namn": "Skanörs strand",
+    "typ": "Strand & natur",
+    "adress": "Falsterbonäset, 239 30 Skanör",
+    "bild": "https://picsum.photos/800/500?random=26",
+    "intro": "Vit sandstrand med lugn och öppna vyer.",
+    "utmaningar": [
+      { "id": "s26-u1", "text": "Gå barfota i sanden" },
+      { "id": "s26-u2", "text": "Hitta en snäcka" },
+      { "id": "s26-u3", "text": "Titta ut över havet" }
+    ]
+  },
+  {
+    "id": "s27",
+    "namn": "Höganäs hamn",
+    "typ": "Hamn & kust",
+    "adress": "Hamnplanen, 263 39 Höganäs",
+    "bild": "https://picsum.photos/800/500?random=27",
+    "intro": "Mysig hamn med små caféer och keramiktradition.",
+    "utmaningar": [
+      { "id": "s27-u1", "text": "Räkna båtar i hamnen" },
+      { "id": "s27-u2", "text": "Hitta en keramikbutik" }
+    ]
+  },
+  {
+    "id": "s28",
+    "namn": "Råby sjöpark",
+    "typ": "Park & natur",
+    "adress": "Råbyvägen, 224 78 Lund",
+    "bild": "https://picsum.photos/800/500?random=28",
+    "intro": "Grön park med sjö och promenadstigar i Lund.",
+    "utmaningar": [
+      { "id": "s28-u1", "text": "Gå runt sjön" },
+      { "id": "s28-u2", "text": "Lyssna på fåglar" },
+      { "id": "s28-u3", "text": "Sätt dig vid vattnet" }
+    ]
+  },
+  {
+    "id": "s29",
+    "namn": "Christinehof slott",
+    "typ": "Slott & historia",
+    "adress": "Christinehof, 273 57 Brösarp",
+    "bild": "https://picsum.photos/800/500?random=29",
+    "intro": "Slott omgivet av natur i Österlen.",
+    "utmaningar": [
+      { "id": "s29-u1", "text": "Gå runt slottet" },
+      { "id": "s29-u2", "text": "Läs om platsens historia" },
+      { "id": "s29-u3", "text": "Hitta en fin vy" }
+    ]
+  },
+  {
+    "id": "s30",
+    "namn": "Åhus strand",
+    "typ": "Strand & kust",
+    "adress": "Täppetstranden, 296 38 Åhus",
+    "bild": "https://picsum.photos/800/500?random=30",
+    "intro": "Lång sandstrand vid östkusten med sommaraktiviteter.",
+    "utmaningar": [
+      { "id": "s30-u1", "text": "Gå längs stranden" },
+      { "id": "s30-u2", "text": "Känn på sanden" },
+      { "id": "s30-u3", "text": "Titta ut över havet" },
+      { "id": "s30-u4", "text": "Hitta något i vattenbrynet" }
+    ]
+  },
+  {
+    "id": "s31",
+    "namn": "Malmö Museer (Slottet)",
+    "typ": "Museum & historia",
+    "adress": "Malmöhusvägen 6, 211 18 Malmö",
+    "bild": "https://picsum.photos/800/500?random=31",
+    "intro": "Ett av Nordens äldsta bevarade renässansslott med flera museiutställningar.",
+    "utmaningar": [
+      { "id": "s31-u1", "text": "Gå in i slottsområdet" },
+      { "id": "s31-u2", "text": "Hitta något som ser riktigt gammalt ut" },
+      { "id": "s31-u3", "text": "Läs om en historisk period" }
+    ]
+  },
+  {
+    "id": "s32",
+    "namn": "Moderna Museet Malmö",
+    "typ": "Museum & konst",
+    "adress": "Gasverksgatan 22, 211 29 Malmö",
+    "bild": "https://picsum.photos/800/500?random=32",
+    "intro": "Museum för modern och samtida konst i en gammal kraftstation.",
+    "utmaningar": [
+      { "id": "s32-u1", "text": "Hitta ett konstverk du inte förstår" },
+      { "id": "s32-u2", "text": "Stå framför ett verk i 20 sekunder" }
+    ]
+  },
+  {
+    "id": "s33",
+    "namn": "Kulturen i Lund",
+    "typ": "Museum & kulturhistoria",
+    "adress": "Tegnérplatsen 6, 223 50 Lund",
+    "bild": "https://picsum.photos/800/500?random=33",
+    "intro": "Friluftsmuseum och kulturhistoriskt museum mitt i Lund.",
+    "utmaningar": [
+      { "id": "s33-u1", "text": "Gå in i ett gammalt hus" },
+      { "id": "s33-u2", "text": "Hitta ett föremål från förr i tiden" },
+      { "id": "s33-u3", "text": "Jämför gammalt och nytt" }
+    ]
+  },
+  {
+    "id": "s34",
+    "namn": "Tekniska Museet Malmö",
+    "typ": "Museum & teknik",
+    "adress": "Södra Promenaden 28, 211 38 Malmö",
+    "bild": "https://picsum.photos/800/500?random=34",
+    "intro": "Teknik- och sjöfartshistoria med stora maskiner och fordon.",
+    "utmaningar": [
+      { "id": "s34-u1", "text": "Hitta ett gammalt fordon" },
+      { "id": "s34-u2", "text": "Läs om en uppfinning" }
+    ]
+  },
+  {
+    "id": "s35",
+    "namn": "Helsingborgs stadsmuseum",
+    "typ": "Museum & historia",
+    "adress": "Drottninggatan 15, 252 21 Helsingborg",
+    "bild": "https://picsum.photos/800/500?random=35",
+    "intro": "Museum om Helsingborgs historia från forntid till nutid.",
+    "utmaningar": [
+      { "id": "s35-u1", "text": "Hitta en gammal karta" },
+      { "id": "s35-u2", "text": "Läs om stadens ursprung" }
+    ]
+  },
+  {
+    "id": "s36",
+    "namn": "Ystads konstmuseum",
+    "typ": "Museum & konst",
+    "adress": "Sankta Maria kyrkoplan 1, 271 34 Ystad",
+    "bild": "https://picsum.photos/800/500?random=36",
+    "intro": "Konstsamling med fokus på skånsk och nordisk konst.",
+    "utmaningar": [
+      { "id": "s36-u1", "text": "Hitta ett målning du gillar" },
+      { "id": "s36-u2", "text": "Stå tyst framför ett konstverk" }
+    ]
+  },
+  {
+    "id": "s37",
+    "namn": "Fredriksdal museer och trädgårdar",
+    "typ": "Museum & friluftsmuseum",
+    "adress": "Gustav Adolfs väg 24, 254 42 Helsingborg",
+    "bild": "https://picsum.photos/800/500?random=37",
+    "intro": "Friluftsmuseum med historiska byggnader och stora trädgårdar.",
+    "utmaningar": [
+      { "id": "s37-u1", "text": "Gå in i en gammal gård" },
+      { "id": "s37-u2", "text": "Hitta en djurhage" },
+      { "id": "s37-u3", "text": "Lukta på en växt" }
+    ]
+  },
+  {
+    "id": "s38",
+    "namn": "Lunds universitets historiska museum",
+    "typ": "Museum & vetenskap",
+    "adress": "Helgonavägen 3, 223 62 Lund",
+    "bild": "https://picsum.photos/800/500?random=38",
+    "intro": "Samlingar från arkeologi, zoologi och historia vid universitetet.",
+    "utmaningar": [
+      { "id": "s38-u1", "text": "Hitta ett gammalt fossil" },
+      { "id": "s38-u2", "text": "Läs om ett djur från förr" }
     ]
   }
 ]
