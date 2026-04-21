@@ -32,11 +32,22 @@ export default function TabsLayout() {
         }}
       />
 
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profil",
+          headerShown: true,
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="map-outline" size={size} color={color} />
+          ),
+        }}
+      />
+
       {/* ✅ Dölj detaljsidan från tab-baren */}
       <Tabs.Screen
         name="sevardheter/[id]"
         options={{
-          href: null,   
+          href: null,
         }}
       />
     </Tabs>

@@ -1,222 +1,289 @@
+import { MaterialIcons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect, useRouter } from "expo-router";
 import { useCallback, useState } from "react";
-import {
-  Image,
-  Pressable,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+import { Alert, Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { getCompletedTasks } from "../../lib/taskStorage";
 import { getVisitedPlaces } from "../../lib/visitStorage";
 import sevardheter from "../data/sevardheter.json";
 
+// ✅ DEV: Lägg in ALLA keys du vill rensa här.
+// OBS: byt "visitedPlaces" och "completedTasks" om din visitStorage/taskStorage använder andra KEYs.
+// Badges-keyn är korrekt från din lib/badgeStorage.ts: "badges_unlocked_v1"
+// Profilbild-keyn är korrekt från din lib/profilePhotoStorage.ts: "profile_photo_v1"
+const DEV_STORAGE_KEYS = [
+  "visitedPlaces",       // ⚠️ byt om din visitStorage använder annan KEY
+  "completedTasks",      // ⚠️ byt om din taskStorage använder annan KEY
+  "badges_unlocked_v1",  // ✅ badges
+  "profile_photo_v1",    // ✅ profilbild
+];
+
 export default function HomeScreen() {
   const router = useRouter();
 
-  const [suggested, setSuggested] = useState<
-    (typeof sevardheter)[number] | null
-  >(null);
-
+  const [suggested, setSuggested] = useState<(typeof sevardheter)[number] | null>(null);
   const [visitedCount, setVisitedCount] = useState(0);
   const [completedTasksCount, setCompletedTasksCount] = useState(0);
 
   const totalPlaces = sevardheter.length;
-  const totalTasks = sevardheter.reduce(
-    (sum, plats) => sum + plats.utmaningar.length,
-    0
-  );
+  const totalTasks = sevardheter.reduce((sum, p) => sum + p.utmaningar.length, 0);
+
+  const load = useCallback(async () => {
+    const visited = await getVisitedPlaces();
+    const completed = await getCompletedTasks();
+
+    setVisitedCount(Object.keys(visited).length);
+
+    const doneTasks = sevardheter
+      .flatMap((p) => p.utmaningar)
+      .filter((u) => completed[u.id]).length;
+
+    setCompletedTasksCount(doneTasks);
+
+    const notVisited = sevardheter.filter((p) => !visited[p.id]);
+    setSuggested(
+      notVisited.length ? notVisited[Math.floor(Math.random() * notVisited.length)] : null
+    );
+  }, []);
 
   useFocusEffect(
     useCallback(() => {
-      async function loadData() {
-        const visited = await getVisitedPlaces();
-        const completedTasks = await getCompletedTasks();
-
-        const visitedTotal = Object.keys(visited).length;
-        setVisitedCount(visitedTotal);
-
-        const doneTasks = sevardheter
-          .flatMap((plats) => plats.utmaningar)
-          .filter((u) => completedTasks[u.id]).length;
-
-        setCompletedTasksCount(doneTasks);
-
-        // Slumpad ej besökt plats
-        const notVisited = sevardheter.filter(
-          (plats) => !visited[plats.id]
-        );
-
-        if (notVisited.length === 0) {
-          setSuggested(null);
-        } else {
-          const random =
-            notVisited[Math.floor(Math.random() * notVisited.length)];
-          setSuggested(random);
-        }
-      }
-
-      loadData();
-    }, [])
+      load();
+    }, [load])
   );
 
-  /* ===== PROGRESSIV NIVÅLOGIK ===== */
+  const progressPct =
+    totalTasks > 0 ? Math.min((completedTasksCount / totalTasks) * 100, 100) : 0;
 
-  /* ===== KORREKT PROGRESSIV NIVÅLOGIK ===== */
+  // ✅ DEV reset: rensa keys + reload
+  const devResetEverything = useCallback(async () => {
+    try {
+      // Rensa explicit de keys vi vet att appen använder
+      await AsyncStorage.multiRemove(DEV_STORAGE_KEYS);
 
-  const totalPoints = visitedCount + completedTasksCount;
+      // Om du vill vara 100% brutal (allt i AsyncStorage), slå på den här också:
+      // await AsyncStorage.clear();
 
-  const BASE_POINTS = 2;
-  const MAX_LEVEL = 20;
-
-  /** Hur många poäng krävs för att gå FRÅN nivå n till n+1 */
-  function pointsForLevelUp(level: number) {
-    return BASE_POINTS + (level - 1);
-  }
-
-  /** Räkna ut nuvarande nivå */
-  let currentLevel = 1;
-  let pointsUsed = 0;
-
-  for (let lvl = 1; lvl <= MAX_LEVEL; lvl++) {
-    const cost = pointsForLevelUp(lvl);
-    if (totalPoints >= pointsUsed + cost) {
-      pointsUsed += cost;
-      currentLevel = lvl;
-    } else {
-      break;
+      await load(); // uppdatera UI direkt
+      Alert.alert("Klart!", "Besök, utmaningar, badges och profilbild är rensade.");
+    } catch (e) {
+      console.error(e);
+      Alert.alert("Fel", "Kunde inte rensa local storage.");
     }
-  }
+  }, [load]);
 
-  /** Progress INOM aktuell nivå */
-  const pointsIntoLevel = totalPoints - pointsUsed;
-  const pointsThisLevel = pointsForLevelUp(currentLevel);
-
-  const progress = Math.min(
-    Math.max(pointsIntoLevel / pointsThisLevel, 0),
-    1
-  );
-
-  const clampedProgress = Math.min(Math.max(progress, 0), 1);
-
-  const LEVEL_TITLES = [
-    "Upptäckare",
-    "Nyfiken turist",
-    "Äventyrare",
-    "Kulturspanare",
-    "Museivandrare",
-    "Skåne‑utforskare",
-    "Historiejägare",
-    "Uppdragsmästare",
-    "Allvetare",
-    "Legend",
-  ];
-
-  const currentTitle =
-    LEVEL_TITLES[(currentLevel - 1) % LEVEL_TITLES.length];
-
-  const progressColor =
-    clampedProgress < 0.33
-      ? "#F59E0B"
-      : clampedProgress < 0.66
-        ? "#10B981"
-        : "#3B82F6";
+  const confirmDevReset = useCallback(() => {
+    Alert.alert(
+      "DEV: Rensa all appdata?",
+      "Tar bort besök, utmaningar, badges och profilbild. Kan inte ångras.",
+      [
+        { text: "Avbryt", style: "cancel" },
+        { text: "Rensa", style: "destructive", onPress: devResetEverything },
+      ]
+    );
+  }, [devResetEverything]);
 
   return (
-    <SafeAreaView className="flex-1 bg-[#F6F2EA]" edges={["top"]}>
-      <ScrollView className="flex-1 p-5">
-        <Text className="text-3xl font-bold text-neutral-900">
-          Museer i Skåne
-        </Text>
+    <SafeAreaView className="flex-1 bg-[#2A221A]" edges={["top"]}>
+      <ScrollView className="flex-1 bg-[#6B4E2E] px-4 pt-8">
+        {/* Header note – mer wow + nivå/stjärna */}
+        <View
+          className="mb-5 rounded-3xl bg-[#F7F0E4] border border-[#2F251B]/35 px-4 py-4"
+          style={{ transform: [{ rotate: "2deg" }] }}
+        >
+          <View className="absolute -top-5 right-4">
+            {/* Nivå/Badge */}
+            <View
+              className="h-12 w-12 items-center justify-center rounded-full bg-[#FFF9EF]"
+              style={{
+                borderWidth: 1,
+                borderColor: "#2F251B",
+                shadowColor: "#000",
+                shadowOpacity: 0.25,
+                shadowRadius: 4,
+                shadowOffset: { width: 0, height: 2 },
+                elevation: 3,
+              }}
+            >
+              <MaterialIcons name="star" size={30} color="#D9A441" />
+            </View>
+          </View>
 
-        <Text className="mt-2 text-neutral-700">
-          Upptäck museer och sevärdheter med små utmaningar ⭐
-        </Text>
+          <Text className="text-3xl font-extrabold text-[#1E1A16] text-center">
+            Museer i Skåne
+          </Text>
+          <Text className="mt-1 text-sm text-[#3A2F25] text-center">
+            Upptäck. Samla. Lås upp ⭐
+          </Text>
+          <View className="mt-2 h-[2px] bg-[#3A2F25]/25 rounded-full" />
+        </View>
 
-        {/* ===== SLUMPAD REKOMMENDATION ===== */}
+        {/* Quick stats – mer kaos */}
+        <View className="mb-5 flex-row gap-3">
+          <View
+            className="flex-1 rounded-2xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4 items-center"
+            style={{
+              transform: [{ rotate: "-2deg" }],
+              shadowColor: "#000",
+              shadowOpacity: 0.15,
+              shadowRadius: 6,
+              shadowOffset: { width: 0, height: 3 },
+              elevation: 2,
+            }}
+          >
+            <MaterialIcons name="place" size={22} color="#2F251B" />
+            <Text className="mt-1 text-xs text-[#4A3E34]">Besökta</Text>
+            <Text className="text-xl font-bold text-[#1E1A16]">
+              {visitedCount}/{totalPlaces}
+            </Text>
+          </View>
+
+          <View
+            className="flex-1 rounded-2xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4 items-center"
+            style={{
+              transform: [{ rotate: "2deg" }],
+              shadowColor: "#000",
+              shadowOpacity: 0.15,
+              shadowRadius: 6,
+              shadowOffset: { width: 0, height: 3 },
+              elevation: 2,
+            }}
+          >
+            <MaterialIcons name="task-alt" size={22} color="#2F251B" />
+            <Text className="mt-1 text-xs text-[#4A3E34]">Utmaningar</Text>
+            <Text className="text-xl font-bold text-[#1E1A16]">
+              {completedTasksCount}/{totalTasks}
+            </Text>
+          </View>
+        </View>
+
+        {/* Progress – mer material */}
+        <View
+          className="mb-6 rounded-3xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4"
+          style={{
+            transform: [{ rotate: "-1deg" }],
+            shadowColor: "#000",
+            shadowOpacity: 0.18,
+            shadowRadius: 6,
+            shadowOffset: { width: 0, height: 3 },
+            elevation: 3,
+          }}
+        >
+          <View className="flex-row items-center justify-between">
+            <Text className="text-sm text-[#4A3E34]">Total progress</Text>
+            <Text className="text-sm font-bold text-[#1E1A16]">
+              {Math.round(progressPct)}%
+            </Text>
+          </View>
+
+          <View className="mt-2 h-3 rounded-full bg-[#2F251B]/20 overflow-hidden">
+            <View style={{ width: `${progressPct}%` }} className="h-full bg-[#2E6F64]" />
+          </View>
+
+          {/* Rivet edge */}
+          <View className="mt-3 h-[6px] bg-[#2F251B]/5" />
+        </View>
+
+        {/* Suggested card – hero större + mer fokus */}
         {suggested && (
-          <View className="mt-6">
-            <Text className="mb-2 text-lg font-semibold text-neutral-900">
+          <View className="mb-10">
+            <Text className="mb-3 text-xl font-semibold text-[#1E1A16]">
               Förslag till nästa besök
             </Text>
 
             <Pressable
               onPress={() =>
-                router.push({
-                  pathname: "/sevardheter/[id]",
-                  params: { id: suggested.id },
-                })
+                router.push({ pathname: "/sevardheter/[id]", params: { id: suggested.id } })
               }
-              className="rounded-2xl overflow-hidden bg-white border border-neutral-300"
+              className="rounded-[28px] bg-[#2F251B]/40 p-[2px]"
+              style={{
+                transform: [{ rotate: "2deg" }],
+                shadowColor: "#000",
+                shadowOpacity: 0.22,
+                shadowRadius: 2,
+                shadowOffset: { width: 0, height: 4 },
+                elevation: 4,
+              }}
             >
-              <Image
-                source={{ uri: suggested.bild }}
-                style={{ width: "100%", height: 160 }}
-                resizeMode="cover"
-              />
+              <View className="rounded-[26px] bg-[#FFF9EF] border border-[#2F251B]/25 overflow-hidden">
+                {/* Tape accents – 2 lägen */}
+                <View
+                  style={{
+                    position: "absolute",
+                    top: -8,
+                    left: 16,
+                    width: 72,
+                    height: 24,
+                    backgroundColor: "#E7D7A6",
+                    opacity: 0.65,
+                    borderRadius: 6,
+                    borderWidth: 1,
+                    borderColor: "rgba(47,37,27,0.18)",
+                    zIndex: 10,
+                  }}
+                />
+                <View
+                  style={{
+                    position: "absolute",
+                    top: -8,
+                    right: 30,
+                    width: 60,
+                    height: 22,
+                    backgroundColor: "#E7D7A6",
+                    opacity: 0.6,
+                    borderRadius: 6,
+                    borderWidth: 1,
+                    borderColor: "rgba(47,37,27,0.18)",
+                    zIndex: 10,
+                  }}
+                />
 
-              <View className="p-4">
-                <Text className="text-xl font-semibold text-neutral-900">
-                  {suggested.namn}
-                </Text>
-                <Text className="mt-1 text-sm text-neutral-600">
-                  {suggested.adress}
-                </Text>
+                <Image
+                  source={{ uri: suggested.bild }}
+                  style={{ width: "100%", height: 210 }}
+                  resizeMode="cover"
+                />
+
+                <View className="p-5">
+                  <Text className="text-2xl font-extrabold text-[#1E1A16]">
+                    {suggested.namn}
+                  </Text>
+                  <Text className="mt-1 text-sm text-[#4A3E34]">
+                    {suggested.adress}
+                  </Text>
+                </View>
+
+                {/* Rivet kant */}
+                <View className="h-[8px] bg-[#2F251B]/6" />
               </View>
             </Pressable>
           </View>
         )}
 
-        {/* ===== STATISTIK ===== */}
-        <View className="mt-6 flex-row gap-3">
-          <View className="flex-1 rounded-xl bg-white border border-neutral-300 p-4 items-center justify-center">
-            <Text className="text-sm text-neutral-600 text-center">
-              Besökta platser
+        {/* ✅ DEV reset längst ner */}
+        <View className="pb-10">
+          <Pressable
+            onPress={confirmDevReset}
+            className="mt-4 w-full flex-row items-center justify-center rounded-2xl bg-[#2F251B]/25 border border-[#2F251B]/30 px-4 py-4"
+            style={{
+              shadowColor: "#000",
+              shadowOpacity: 0.15,
+              shadowRadius: 6,
+              shadowOffset: { width: 0, height: 3 },
+              elevation: 2,
+            }}
+          >
+            <MaterialIcons name="delete-forever" size={20} color="#FFF9EF" />
+            <Text className="ml-2 text-sm font-extrabold text-[#FFF9EF]">
+              DEV: Rensa appdata
             </Text>
-            <Text className="mt-1 text-xl font-bold text-neutral-900 text-center">
-              {visitedCount} / {totalPlaces}
-            </Text>
-          </View>
+          </Pressable>
 
-          <View className="flex-1 rounded-xl bg-white border border-neutral-300 p-4 items-center justify-center">
-            <Text className="text-sm text-neutral-600 text-center">
-              Klara utmaningar
-            </Text>
-            <Text className="mt-1 text-xl font-bold text-neutral-900 text-center">
-              {completedTasksCount} / {totalTasks}
-            </Text>
-          </View>
-        </View>
-
-        {/* ===== NIVÅ / PROGRESS ===== */}
-        <View className="mt-8 rounded-xl bg-white border border-neutral-300 p-4">
-          <Text className="text-lg text-neutral-600 text-center">
-            Nivå: <Text className="mt-1 text-lg font-bold text-neutral-900 text-center">
-           {currentTitle} 
+          <Text className="mt-2 text-center text-[11px] text-[#F7F0E4]/80">
+            Bara för utveckling – rensar besök, utmaningar, badges och profilbild.
           </Text>
-          </Text>
-
-
-
-          <View className="mt-4 flex-row items-center">
-            <Text className="text-2xl mr-3">🏆</Text>
-
-            <View className="flex-1 h-3 rounded-full bg-neutral-200 overflow-hidden">
-              <View
-                style={{
-                  width: `${clampedProgress * 100}%`,
-                  backgroundColor: progressColor,
-                }}
-                className="h-full rounded-full"
-              />
-            </View>
-
-            <Text className="ml-3 text-sm text-neutral-600">
-              {currentLevel}/{MAX_LEVEL}
-            </Text>
-          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
