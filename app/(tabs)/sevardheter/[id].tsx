@@ -6,7 +6,9 @@ import { getCompletedTasks, toggleTask } from "../../../lib/taskStorage";
 import { getVisitedPlaces, markVisited, unmarkVisited } from "../../../lib/visitStorage";
 
 import { BADGES, type BadgeId } from "../../../lib/badgeDefinitions";
-import { evaluateBadges } from "../../../lib/badgeEngine";
+import { evaluateBadges, type CategoryName } from "../../../lib/badgeEngine";
+
+// ✅ VIKTIGT: använd filen som har `kategori`
 import sevardheter from "../../data/sevardheter.json";
 
 type Place = (typeof sevardheter)[number];
@@ -15,6 +17,7 @@ function normalizeType(s: unknown) {
   return String(s ?? "").trim().toLowerCase();
 }
 
+// Legacy-flaggar (för dina gamla badges: nationalpark/slott/natur_5 osv)
 function getCategoryFlags(typ: unknown) {
   const t = normalizeType(typ);
 
@@ -27,10 +30,7 @@ function getCategoryFlags(typ: unknown) {
 
   const isNationalpark = t.includes("nationalpark");
 
-  const isSlott =
-    t.includes("slott") ||
-    t.includes("herrgård") ||
-    t.includes("borg");
+  const isSlott = t.includes("slott") || t.includes("herrgård") || t.includes("borg");
 
   const isNatur =
     t.includes("natur") ||
@@ -92,7 +92,7 @@ export default function SevardhetDetailScreen() {
     return utmaningar.every((u) => !!completed[u.id]);
   }, [completed, utmaningar]);
 
-  // ✅ Lookup: id -> plats (för att kunna räkna typer bland besökta)
+  // ✅ Lookup: id -> plats (för att kunna räkna bland besökta)
   const placeById = useMemo<Record<string, Place>>(() => {
     return Object.fromEntries(sevardheter.map((p) => [p.id, p])) as Record<string, Place>;
   }, []);
@@ -121,8 +121,11 @@ export default function SevardhetDetailScreen() {
       const visitedThis = ctx.visitedThisPlace ?? !!v[platsId];
       const allDone = ctx.allDoneOverride ?? utmaningar.every((u) => !!c[u.id]);
 
-      // ✅ Räkna totalsummor per kategori bland ALLA besökta platser
-      let museumCount = 0;
+      // ✅ NYTT: räkna besök per KATEGORI (8 st) från `plats.kategori`
+      const categoryVisited: Partial<Record<CategoryName, number>> = {};
+
+      // Legacy (behåll)
+      let museumCountLegacy = 0;
       let nationalparkCount = 0;
       let slottCount = 0;
       let naturCount = 0;
@@ -131,9 +134,24 @@ export default function SevardhetDetailScreen() {
         const p = placeById[visitedId];
         if (!p) continue;
 
-        const flags = getCategoryFlags(p.typ);
+        // --- NYTT: kategori-räkning för nya badges ---
+        const k = String((p as any).kategori ?? "").trim() as CategoryName;
+        if (
+          k === "Museum" ||
+          k === "Konst" ||
+          k === "Natur" ||
+          k === "Strand" ||
+          k === "Historia" ||
+          k === "Utflykt" ||
+          k === "Leder" ||
+          k === "Barn"
+        ) {
+          categoryVisited[k] = (categoryVisited[k] ?? 0) + 1;
+        }
 
-        if (flags.isMuseum) museumCount += 1;
+        // --- Legacy-räkning för gamla badges ---
+        const flags = getCategoryFlags((p as any).typ);
+        if (flags.isMuseum) museumCountLegacy += 1;
         if (flags.isNationalpark) nationalparkCount += 1;
         if (flags.isSlott) slottCount += 1;
         if (flags.isNatur) naturCount += 1;
@@ -143,8 +161,11 @@ export default function SevardhetDetailScreen() {
         totalVisited: totalV,
         totalStars: totalS,
 
-        // ✅ AwardContext kräver numbers
-        museumVisited: museumCount,
+        // ✅ NYTT: detta behövs för cat_museum_* osv
+        categoryVisited,
+
+        // ✅ Legacy (så dina gamla badges fortsätter funka)
+        museumVisited: museumCountLegacy,
         nationalparkVisited: nationalparkCount,
         slottVisited: slottCount,
         naturVisited: naturCount,
@@ -181,7 +202,7 @@ export default function SevardhetDetailScreen() {
       delete nextVisited[platsId];
       setVisited(nextVisited);
 
-      // Vanligt: man tar inte bort badges när man unvisitar, så vi kör inte badge-check här.
+      // Vanligt: man tar inte bort badges när man unvisitar.
       return;
     }
 
@@ -206,11 +227,7 @@ export default function SevardhetDetailScreen() {
 
   return (
     <ScrollView className="flex-1 bg-[#F6F2EA]">
-      <Image
-        source={{ uri: plats.bild }}
-        style={{ width: "100%", height: 220 }}
-        resizeMode="cover"
-      />
+      <Image source={{ uri: plats.bild }} style={{ width: "100%", height: 220 }} resizeMode="cover" />
 
       <View className="p-5">
         {/* ===== TOAST ===== */}
@@ -244,9 +261,7 @@ export default function SevardhetDetailScreen() {
         >
           <Text className="text-2xl mr-3">{visitDate ? "🏠" : "⌂"}</Text>
 
-          <Text className="flex-1 text-neutral-800">
-            {visitDate ? `Besökt ${visitDate}` : "Inte besökt"}
-          </Text>
+          <Text className="flex-1 text-neutral-800">{visitDate ? `Besökt ${visitDate}` : "Inte besökt"}</Text>
         </Pressable>
 
         {/* ===== UTMANINGAR ===== */}
@@ -283,9 +298,7 @@ export default function SevardhetDetailScreen() {
           </Text>
 
           {allTasksDoneForPlace && (
-            <Text className="mt-1 text-sm font-semibold text-green-800">
-              🎯 Full pott på den här platsen!
-            </Text>
+            <Text className="mt-1 text-sm font-semibold text-green-800">🎯 Full pott på den här platsen!</Text>
           )}
         </View>
       </View>

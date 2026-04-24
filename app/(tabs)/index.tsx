@@ -63,6 +63,19 @@ function distanceKm(aLat: number, aLng: number, bLat: number, bLng: number) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
+/* ✅ NYTT: tolerant timestamp-parser för visitedPlaces (funkar med number|string|true) */
+function asTimestamp(v: unknown): number | null {
+  if (typeof v === "number" && Number.isFinite(v)) return v;
+  if (typeof v === "string") {
+    const n = Number(v);
+    if (Number.isFinite(n)) return n;
+    const t = Date.parse(v);
+    if (Number.isFinite(t)) return t;
+  }
+  if (v === true) return null;
+  return null;
+}
+
 export default function HomeScreen() {
   const router = useRouter();
 
@@ -71,7 +84,9 @@ export default function HomeScreen() {
   const [completedTasksCount, setCompletedTasksCount] = useState(0);
   const [visitedMap, setVisitedMap] = useState<Record<string, boolean>>({});
 
-  const [userPos, setUserPos] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [userPos, setUserPos] = useState<{ latitude: number; longitude: number } | null>(
+    null
+  );
   const [locationDenied, setLocationDenied] = useState(false);
 
   const [showAllNearby, setShowAllNearby] = useState(false);
@@ -92,9 +107,13 @@ export default function HomeScreen() {
   const [badges, setBadges] = useState<UnlockedBadges>({});
   const unlockedCount = useMemo(() => Object.keys(badges).length, [badges]);
 
+  /* ✅ NYTT state: senaste besöken (horisontell rad) */
+  const [recentVisitedPlaces, setRecentVisitedPlaces] = useState<Place[]>([]);
+
   const totalPlaces = sevardheter.length;
   const totalTasks = sevardheter.reduce((sum, p) => sum + (p.utmaningar?.length ?? 0), 0);
-  const progressPct = totalTasks > 0 ? Math.min((completedTasksCount / totalTasks) * 100, 100) : 0;
+  const progressPct =
+    totalTasks > 0 ? Math.min((completedTasksCount / totalTasks) * 100, 100) : 0;
 
   const allMarkers: PlaceWithCoords[] = useMemo(() => {
     return sevardheter
@@ -118,29 +137,37 @@ export default function HomeScreen() {
       .sort((a, b) => a.distKm - b.distKm);
   }, [allMarkers, userPos, fallback]);
 
+  // ✅ Filterchips (8-kategorier via fältet "type")
+  const CHIP_TYPES = [
+    "Alla",
+    "Museum",
+    "Konst",
+    "Natur",
+    "Strand",
+    "Historia",
+    "Utflykt",
+    "Leder",
+    "Barn",
+  ] as const;
 
-  // ✅ Filterchips
-// ✅ Filterchips (8-kategorier via fältet "type")
-const CHIP_TYPES = ["Alla", "Museum", "Konst", "Natur", "Strand", "Historia", "Utflykt", "Leder", "Barn"] as const;
+  const [selectedType, setSelectedType] = useState<(typeof CHIP_TYPES)[number]>("Alla");
 
-const [selectedType, setSelectedType] = useState<(typeof CHIP_TYPES)[number]>("Alla");
+  const visibleMarkers = useMemo(() => {
+    if (selectedType === "Alla") return allMarkers;
+    return allMarkers.filter((p) => (p.kategori ?? "").toString().trim() === selectedType);
+  }, [allMarkers, selectedType]);
 
-const visibleMarkers = useMemo(() => {
-  if (selectedType === "Alla") return allMarkers;
-  return allMarkers.filter((p) => (p.kategori ?? "").toString().trim() === selectedType);
-}, [allMarkers, selectedType]);
+  const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
+    if (!visibleMarkers.length) return [];
+    const base = userPos ?? fallback;
 
-const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
-  if (!visibleMarkers.length) return [];
-  const base = userPos ?? fallback;
-
-  return visibleMarkers
-    .map((p) => ({
-      ...p,
-      distKm: distanceKm(base.latitude, base.longitude, p.latitude, p.longitude),
-    }))
-    .sort((a, b) => a.distKm - b.distKm);
-}, [visibleMarkers, userPos, fallback]);
+    return visibleMarkers
+      .map((p) => ({
+        ...p,
+        distKm: distanceKm(base.latitude, base.longitude, p.latitude, p.longitude),
+      }))
+      .sort((a, b) => a.distKm - b.distKm);
+  }, [visibleMarkers, userPos, fallback]);
 
   const requestLocation = useCallback(async () => {
     try {
@@ -188,6 +215,23 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
 
     /* ✅ ENDA NYTT: uppdatera badge-state */
     setBadges(unlocked);
+
+    /* ✅ NYTT: bygg "Senaste besöken" (sortera på timestamp om det finns) */
+    const visitedEntries = Object.entries(visited ?? {});
+    const visitedSortedIds = visitedEntries
+      .map(([id, val]) => ({ id, ts: asTimestamp(val) }))
+      .sort((a, b) => {
+        const aTs = a.ts ?? -1;
+        const bTs = b.ts ?? -1;
+        return bTs - aTs;
+      })
+      .map((x) => x.id);
+
+    const recent = visitedSortedIds
+      .map((id) => sevardheter.find((p) => p.id === id))
+      .filter(Boolean) as Place[];
+
+    setRecentVisitedPlaces(recent.slice(0, 12));
 
     const notVisited = sevardheter.filter((p) => !visited[p.id]);
     setSuggested((prev) => {
@@ -365,6 +409,104 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
           </View>
         </View>
 
+        {/* ✅ NYTT: Senaste besöken (horisontell rad) */}
+        {recentVisitedPlaces.length > 0 && (
+          <View className="mb-6">
+            <View className="mb-2 flex-row items-center justify-between">
+              <Text className="text-xl font-semibold text-[#1E1A16]">Senaste besöken</Text>
+              <Text className="text-[11px] text-[#1E1A16]/70">{recentVisitedPlaces.length} st</Text>
+            </View>
+
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ paddingRight: 12 }}
+            >
+              {recentVisitedPlaces.map((p) => (
+                <Pressable
+                  key={p.id}
+                  onPress={() =>
+                    router.push({ pathname: "/sevardheter/[id]", params: { id: p.id } })
+                  }
+                  style={{ width: 220, marginRight: 12 }}
+                >
+                  <View
+                    className="rounded-[26px] bg-[#FFF9EF] border border-[#2F251B]/25 overflow-hidden"
+                    style={{
+                      shadowColor: "#000",
+                      shadowOpacity: 0.18,
+                      shadowRadius: 6,
+                      shadowOffset: { width: 0, height: 3 },
+                      elevation: 2,
+                      transform: [{ rotate: "-1deg" }],
+                    }}
+                  >
+                    <View style={{ position: "relative" }}>
+                      <Image source={{ uri: p.bild }} style={{ width: "100%", height: 120 }} />
+                      <View
+                        style={{
+                          position: "absolute",
+                          top: 10,
+                          right: 10,
+                          backgroundColor: "rgba(46,111,100,0.92)",
+                          paddingHorizontal: 10,
+                          paddingVertical: 6,
+                          borderRadius: 999,
+                          borderWidth: 1,
+                          borderColor: "rgba(47,37,27,0.25)",
+                        }}
+                      >
+                        <Text style={{ color: "#FFF9EF", fontSize: 11, fontWeight: "900" }}>
+                          ✅ Besökt
+                        </Text>
+                      </View>
+                    </View>
+
+                    <View style={{ padding: 12 }}>
+                      <Text
+                        numberOfLines={1}
+                        style={{ fontSize: 16, fontWeight: "900", color: "#1E1A16" }}
+                      >
+                        {p.namn}
+                      </Text>
+
+                      <Text
+                        numberOfLines={1}
+                        style={{
+                          marginTop: 2,
+                          fontSize: 11,
+                          fontWeight: "800",
+                          color: "rgba(30,26,22,0.70)",
+                        }}
+                      >
+                        {(p.kategori ?? p.typ) ? `${p.kategori ?? p.typ}` : "Sevärdhet"}
+                      </Text>
+
+                      <Text numberOfLines={1} style={{ marginTop: 2, fontSize: 11, color: "#4A3E34" }}>
+                        {p.adress}
+                      </Text>
+
+                      <View style={{ marginTop: 8, flexDirection: "row", alignItems: "center" }}>
+                        <MaterialIcons name="chevron-right" size={18} color="#2F251B" />
+                        <Text
+                          style={{
+                            marginLeft: 4,
+                            fontSize: 11,
+                            fontWeight: "900",
+                            color: "#2F251B",
+                          }}
+                        >
+                          Öppna
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </Pressable>
+              ))}
+            </ScrollView>
+          </View>
+        )}
+
         {/* Filterchips */}
         <View className="mb-4">
           <ScrollView
@@ -403,11 +545,8 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
           </ScrollView>
 
           {/* liten rad under chips (valfri, men tydlig) */}
-          <Text className="mt-2 text-[11px] text-[#1E1A16]/70">
-            Filter: {selectedType}
-          </Text>
+          <Text className="mt-2 text-[11px] text-[#1E1A16]/70">Filter: {selectedType}</Text>
         </View>
-      
 
         {/* Map */}
         <View className="mb-10">
@@ -470,7 +609,9 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
                     >
                       <View pointerEvents="none" style={{ alignItems: "center" }}>
                         <View style={labelBoxStyle}>
-                          <Text numberOfLines={1} style={labelTextStyle}>Du är här</Text>
+                          <Text numberOfLines={1} style={labelTextStyle}>
+                            Du är här
+                          </Text>
                         </View>
                         <View
                           style={{
@@ -584,9 +725,7 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
               {(showAllNearby ? visibleNearbySorted : visibleNearbySorted.slice(0, 8)).map((p) => (
                 <Pressable
                   key={p.id}
-                  onPress={() =>
-                    router.push({ pathname: "/sevardheter/[id]", params: { id: p.id } })
-                  }
+                  onPress={() => router.push({ pathname: "/sevardheter/[id]", params: { id: p.id } })}
                   className="mb-2 rounded-2xl bg-white border border-[#2F251B]/15 px-4 py-3 flex-row items-center"
                 >
                   <Text className="text-lg mr-3">{visitedMap[p.id] ? "✅" : "📍"}</Text>
@@ -649,4 +788,3 @@ const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
     </SafeAreaView>
   );
 }
-
