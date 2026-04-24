@@ -5,7 +5,23 @@ import { Image, Pressable, ScrollView, Text, View } from "react-native";
 
 import { getCompletedTasks } from "../../lib/taskStorage";
 import { getVisitedPlaces } from "../../lib/visitStorage";
-import sevardheter from "../data/sevardheter.json";
+
+// ✅ filen som innehåller `kategori`
+import sevardheterJson from "../data/sevardheter.json";
+
+type Challenge = { id: string; text: string };
+
+type Place = {
+  id: string;
+  namn: string;
+  typ: string;           // detaljtyp (behåll)
+  kategori?: string;     // ✅ 8-kategori för filterchips
+  adress: string;
+  bild: string;
+  intro: string;
+  beskrivning: string;
+  utmaningar: Challenge[];
+};
 
 function clamp(n: number, min: number, max: number) {
   return Math.max(min, Math.min(max, n));
@@ -30,6 +46,22 @@ export default function SevardheterScreen() {
   const [visited, setVisited] = useState<Record<string, string>>({});
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
 
+  // ✅ Filterchips (8 kategorier)
+  const CHIP_CATEGORIES = [
+    "Alla",
+    "Museum",
+    "Konst",
+    "Natur",
+    "Strand",
+    "Historia",
+    "Utflykt",
+    "Leder",
+    "Barn",
+  ] as const;
+
+  const [selectedCategory, setSelectedCategory] =
+    useState<(typeof CHIP_CATEGORIES)[number]>("Alla");
+
   // ✅ Stabil lutning (RN-style, inte Tailwind)
   const cardRotations = [-2, -1, 0, 1, 2];
 
@@ -53,6 +85,13 @@ export default function SevardheterScreen() {
     []
   );
 
+  // ✅ Filtrerad lista baserat på kategori
+  const filteredSevardheter = useMemo(() => {
+    const list = sevardheterJson as unknown as Place[];
+    if (selectedCategory === "Alla") return list;
+    return list.filter((p) => (p.kategori ?? "").trim() === selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <View className="flex-1 bg-[#2A221A]">
       <ScrollView className="flex-1 bg-[#6B4E2E] px-3 pt-3">
@@ -66,8 +105,54 @@ export default function SevardheterScreen() {
           <View className="mt-2 h-[2px] bg-[#3A2F25]/20 rounded-full" />
         </View>
 
+        {/* ✅ Filterchips */}
+        <View className="mb-3">
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingRight: 12 }}
+          >
+            {CHIP_CATEGORIES.map((t) => {
+              const active = t === selectedCategory;
+              return (
+                <Pressable
+                  key={t}
+                  onPress={() => setSelectedCategory(t)}
+                  style={{
+                    marginRight: 8,
+                    paddingHorizontal: 12,
+                    paddingVertical: 8,
+                    borderRadius: 999,
+                    backgroundColor: active
+                      ? "rgba(47,37,27,0.92)"
+                      : "rgba(255,249,239,0.90)",
+                    borderWidth: 1,
+                    borderColor: active
+                      ? "rgba(47,37,27,0.92)"
+                      : "rgba(47,37,27,0.25)",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      fontWeight: "800",
+                      color: active ? "#FFF9EF" : "#2F251B",
+                    }}
+                  >
+                    {t}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
+
+          <Text className="mt-2 text-[11px] text-[#F7F0E4]/80">
+            Visar: {selectedCategory} • {filteredSevardheter.length} st
+          </Text>
+        </View>
+
         <View className="gap-3 pb-6">
-          {sevardheter.map((plats, index) => {
+          {filteredSevardheter.map((plats, index) => {
             const platsId = plats.id;
             const isVisited = !!visited[platsId];
 
@@ -76,14 +161,12 @@ export default function SevardheterScreen() {
               (u) => completed[u.id]
             ).length;
 
-            const progress =
-              totalTasks > 0 ? completedTasksCount / totalTasks : 0;
+            const progress = totalTasks > 0 ? completedTasksCount / totalTasks : 0;
 
             const safePct = clamp(Math.round(progress * 100), 0, 100);
             const colors = getProgressColors(safePct);
 
-            const cardRotate =
-              cardRotations[index % cardRotations.length];
+            const cardRotate = cardRotations[index % cardRotations.length];
             const tapeIndex = index % 3;
 
             return (
@@ -111,9 +194,7 @@ export default function SevardheterScreen() {
                     borderWidth: 1,
                     borderColor: "rgba(47,37,27,0.15)",
                     opacity: 0.65,
-                    transform: [
-                      { rotate: `${tapeRotations[tapeIndex]}deg` },
-                    ],
+                    transform: [{ rotate: `${tapeRotations[tapeIndex]}deg` }],
                     zIndex: 10,
                   }}
                 />
@@ -129,9 +210,7 @@ export default function SevardheterScreen() {
                     borderWidth: 1,
                     borderColor: "rgba(47,37,27,0.15)",
                     opacity: 0.6,
-                    transform: [
-                      { rotate: `${-tapeRotations[tapeIndex]}deg` },
-                    ],
+                    transform: [{ rotate: `${-tapeRotations[tapeIndex]}deg` }],
                     zIndex: 10,
                   }}
                 />
@@ -177,12 +256,7 @@ export default function SevardheterScreen() {
 
                           <Text className="mt-1 text-[11px] text-[#4A3E34]">
                             {completedTasksCount}/{totalTasks} •{" "}
-                            <Text
-                              style={{
-                                color: colors.label,
-                                fontWeight: "800",
-                              }}
-                            >
+                            <Text style={{ color: colors.label, fontWeight: "800" }}>
                               {safePct}%
                             </Text>
                           </Text>
@@ -190,7 +264,6 @@ export default function SevardheterScreen() {
                       </View>
 
                       <View className="items-end ml-2">
-                        {/* Ej besökt ELLER BESÖKT (inte båda) */}
                         {!isVisited ? (
                           <View className="rounded-full bg-[#1E1A16] px-2.5 py-1">
                             <Text className="text-[12px] text-[#FFF9EF]">Ej besökt</Text>
@@ -205,23 +278,20 @@ export default function SevardheterScreen() {
                           </View>
                         )}
 
-                        {/* Rund utmanings‑ring (eller ⭐ när alla klara) */}
-                        <View
-                          className="mt-2 mr-4 h-11 w-11 items-center justify-center rounded-full bg-[#FFF9EF]"
-                        >
+                        <View className="mt-2 mr-4 h-11 w-11 items-center justify-center rounded-full bg-[#FFF9EF]">
                           {completedTasksCount === totalTasks && totalTasks > 0 ? (
-                              <View
-                                style={{
-                                  shadowColor: "#000",
-                                  shadowOpacity: 0.35,
-                                  shadowRadius: 3,
-                                  shadowOffset: { width: 0, height: 2 },
-                                  elevation: 4, // Android
-                                  transform: [{ rotate: "15deg" }],
-                                }}
-                              >
-                                <FontAwesome name="star" size={28} color="#F4B400" />
-                              </View>
+                            <View
+                              style={{
+                                shadowColor: "#000",
+                                shadowOpacity: 0.35,
+                                shadowRadius: 3,
+                                shadowOffset: { width: 0, height: 2 },
+                                elevation: 4,
+                                transform: [{ rotate: "15deg" }],
+                              }}
+                            >
+                              <FontAwesome name="star" size={28} color="#F4B400" />
+                            </View>
                           ) : (
                             <View className="border border-[#2F251B] rounded-full px-2 py-1">
                               <Text className="text-[12px] font-bold text-[#2F251B]">
@@ -231,7 +301,6 @@ export default function SevardheterScreen() {
                           )}
                         </View>
                       </View>
-
                     </View>
 
                     <View className="h-[6px] bg-[#2F251B]/5" />

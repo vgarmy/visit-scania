@@ -1,72 +1,254 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useFocusEffect, useRouter } from "expo-router";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Alert, Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import * as Location from "expo-location";
+import MapView, { Marker, PROVIDER_DEFAULT, Region } from "react-native-maps";
+
 import { getCompletedTasks } from "../../lib/taskStorage";
 import { getVisitedPlaces } from "../../lib/visitStorage";
-import sevardheter from "../data/sevardheter.json";
+import sevardheterJson from "../data/sevardheter.json";
 
-// ✅ DEV: Lägg in ALLA keys du vill rensa här.
-// OBS: byt "visitedPlaces" och "completedTasks" om din visitStorage/taskStorage använder andra KEYs.
-// Badges-keyn är korrekt från din lib/badgeStorage.ts: "badges_unlocked_v1"
-// Profilbild-keyn är korrekt från din lib/profilePhotoStorage.ts: "profile_photo_v1"
+/* ✅ ENDA NYTT (för tredje quickstat-rutan) */
+import { BADGES } from "../../lib/badgeDefinitions";
+import { getUnlockedBadges, type UnlockedBadges } from "../../lib/badgeStorage";
+
 const DEV_STORAGE_KEYS = [
-  "visitedPlaces",       // ⚠️ byt om din visitStorage använder annan KEY
-  "completedTasks",      // ⚠️ byt om din taskStorage använder annan KEY
-  "badges_unlocked_v1",  // ✅ badges
-  "profile_photo_v1",    // ✅ profilbild
+  "visitedPlaces",
+  "completedTasks",
+  "badges_unlocked_v1",
+  "profile_photo_v1",
 ];
+
+type Challenge = { id: string; text: string };
+
+type Place = {
+  id: string;
+  namn: string;
+  kategori?: string;
+  typ: string;
+  adress: string;
+  latitud?: number;
+  longitud?: number;
+  bild: string;
+  intro: string;
+  beskrivning: string;
+  utmaningar: Challenge[];
+};
+
+type PlaceWithCoords = Place & { latitude: number; longitude: number };
+type PlaceWithDistance = PlaceWithCoords & { distKm: number };
+
+const sevardheter: Place[] = sevardheterJson as unknown as Place[];
+
+function isValidCoord(n: unknown): n is number {
+  return typeof n === "number" && Number.isFinite(n);
+}
+
+function distanceKm(aLat: number, aLng: number, bLat: number, bLng: number) {
+  const R = 6371;
+  const dLat = ((bLat - aLat) * Math.PI) / 180;
+  const dLng = ((bLng - aLng) * Math.PI) / 180;
+
+  const lat1 = (aLat * Math.PI) / 180;
+  const lat2 = (bLat * Math.PI) / 180;
+
+  const h =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
 
 export default function HomeScreen() {
   const router = useRouter();
 
-  const [suggested, setSuggested] = useState<(typeof sevardheter)[number] | null>(null);
+  const [suggested, setSuggested] = useState<Place | null>(null);
   const [visitedCount, setVisitedCount] = useState(0);
   const [completedTasksCount, setCompletedTasksCount] = useState(0);
+  const [visitedMap, setVisitedMap] = useState<Record<string, boolean>>({});
+
+  const [userPos, setUserPos] = useState<{ latitude: number; longitude: number } | null>(null);
+  const [locationDenied, setLocationDenied] = useState(false);
+
+  const [showAllNearby, setShowAllNearby] = useState(false);
+
+  const mapRef = useRef<any>(null);
+  const didCenterRef = useRef(false);
+
+  const fallback = useRef({ latitude: 55.605, longitude: 12.9875 }).current;
+
+  const [region, setRegion] = useState<Region>({
+    latitude: fallback.latitude,
+    longitude: fallback.longitude,
+    latitudeDelta: 0.12,
+    longitudeDelta: 0.12,
+  });
+
+  /* ✅ ENDA NYTT state (för badges-rutan) */
+  const [badges, setBadges] = useState<UnlockedBadges>({});
+  const unlockedCount = useMemo(() => Object.keys(badges).length, [badges]);
 
   const totalPlaces = sevardheter.length;
-  const totalTasks = sevardheter.reduce((sum, p) => sum + p.utmaningar.length, 0);
+  const totalTasks = sevardheter.reduce((sum, p) => sum + (p.utmaningar?.length ?? 0), 0);
+  const progressPct = totalTasks > 0 ? Math.min((completedTasksCount / totalTasks) * 100, 100) : 0;
+
+  const allMarkers: PlaceWithCoords[] = useMemo(() => {
+    return sevardheter
+      .filter((p) => isValidCoord(p.latitud) && isValidCoord(p.longitud))
+      .map((p) => ({
+        ...p,
+        latitude: p.latitud as number,
+        longitude: p.longitud as number,
+      }));
+  }, []);
+
+  const nearbySorted: PlaceWithDistance[] = useMemo(() => {
+    if (!allMarkers.length) return [];
+    const base = userPos ?? fallback;
+
+    return allMarkers
+      .map((p) => ({
+        ...p,
+        distKm: distanceKm(base.latitude, base.longitude, p.latitude, p.longitude),
+      }))
+      .sort((a, b) => a.distKm - b.distKm);
+  }, [allMarkers, userPos, fallback]);
+
+
+  // ✅ Filterchips
+// ✅ Filterchips (8-kategorier via fältet "type")
+const CHIP_TYPES = ["Alla", "Museum", "Konst", "Natur", "Strand", "Historia", "Utflykt", "Leder", "Barn"] as const;
+
+const [selectedType, setSelectedType] = useState<(typeof CHIP_TYPES)[number]>("Alla");
+
+const visibleMarkers = useMemo(() => {
+  if (selectedType === "Alla") return allMarkers;
+  return allMarkers.filter((p) => (p.kategori ?? "").toString().trim() === selectedType);
+}, [allMarkers, selectedType]);
+
+const visibleNearbySorted: PlaceWithDistance[] = useMemo(() => {
+  if (!visibleMarkers.length) return [];
+  const base = userPos ?? fallback;
+
+  return visibleMarkers
+    .map((p) => ({
+      ...p,
+      distKm: distanceKm(base.latitude, base.longitude, p.latitude, p.longitude),
+    }))
+    .sort((a, b) => a.distKm - b.distKm);
+}, [visibleMarkers, userPos, fallback]);
+
+  const requestLocation = useCallback(async () => {
+    try {
+      setLocationDenied(false);
+
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setLocationDenied(true);
+        setUserPos(null);
+        return;
+      }
+
+      const loc = await Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Balanced,
+      });
+
+      setUserPos({ latitude: loc.coords.latitude, longitude: loc.coords.longitude });
+    } catch (e) {
+      console.warn("Location error", e);
+      setUserPos(null);
+      setLocationDenied(true);
+    }
+  }, []);
 
   const load = useCallback(async () => {
-    const visited = await getVisitedPlaces();
-    const completed = await getCompletedTasks();
+    /* ✅ ENDA logikändringen: hämta unlocked badges också */
+    const [visited, completed, unlocked] = await Promise.all([
+      getVisitedPlaces(),
+      getCompletedTasks(),
+      getUnlockedBadges(),
+    ]);
 
+    const visitedBoolMap: Record<string, boolean> = Object.fromEntries(
+      Object.keys(visited).map((id) => [id, true])
+    );
+
+    setVisitedMap(visitedBoolMap);
     setVisitedCount(Object.keys(visited).length);
 
     const doneTasks = sevardheter
-      .flatMap((p) => p.utmaningar)
-      .filter((u) => completed[u.id]).length;
+      .flatMap((p) => p.utmaningar ?? [])
+      .filter((u) => !!completed[u.id]).length;
 
     setCompletedTasksCount(doneTasks);
 
+    /* ✅ ENDA NYTT: uppdatera badge-state */
+    setBadges(unlocked);
+
     const notVisited = sevardheter.filter((p) => !visited[p.id]);
-    setSuggested(
-      notVisited.length ? notVisited[Math.floor(Math.random() * notVisited.length)] : null
-    );
+    setSuggested((prev) => {
+      if (prev && !visited[prev.id]) return prev;
+      if (!notVisited.length) return null;
+      return notVisited[Math.floor(Math.random() * notVisited.length)];
+    });
   }, []);
 
   useFocusEffect(
     useCallback(() => {
       load();
-    }, [load])
+      requestLocation();
+    }, [load, requestLocation])
   );
 
-  const progressPct =
-    totalTasks > 0 ? Math.min((completedTasksCount / totalTasks) * 100, 100) : 0;
+  const centerOnMe = useCallback(
+    (animated: boolean = true) => {
+      const center = userPos ?? fallback;
 
-  // ✅ DEV reset: rensa keys + reload
+      const next: Region = {
+        latitude: center.latitude,
+        longitude: center.longitude,
+        latitudeDelta: 0.06,
+        longitudeDelta: 0.06,
+      };
+
+      setRegion(next);
+      mapRef.current?.animateToRegion(next, animated ? 280 : 0);
+    },
+    [userPos, fallback]
+  );
+
+  useEffect(() => {
+    if (!userPos) return;
+    if (didCenterRef.current) return;
+
+    didCenterRef.current = true;
+    centerOnMe(true);
+  }, [userPos, centerOnMe]);
+
+  const fitToAllPins = useCallback(
+    (animated: boolean = true) => {
+      const coords = [
+        ...allMarkers.map((p) => ({ latitude: p.latitude, longitude: p.longitude })),
+        ...(userPos ? [{ latitude: userPos.latitude, longitude: userPos.longitude }] : []),
+      ];
+      if (!coords.length) return;
+
+      mapRef.current?.fitToCoordinates(coords, {
+        edgePadding: { top: 70, right: 70, bottom: 70, left: 70 },
+        animated,
+      });
+    },
+    [allMarkers, userPos]
+  );
+
   const devResetEverything = useCallback(async () => {
     try {
-      // Rensa explicit de keys vi vet att appen använder
       await AsyncStorage.multiRemove(DEV_STORAGE_KEYS);
-
-      // Om du vill vara 100% brutal (allt i AsyncStorage), slå på den här också:
-      // await AsyncStorage.clear();
-
-      await load(); // uppdatera UI direkt
+      await load();
       Alert.alert("Klart!", "Besök, utmaningar, badges och profilbild är rensade.");
     } catch (e) {
       console.error(e);
@@ -85,16 +267,31 @@ export default function HomeScreen() {
     );
   }, [devResetEverything]);
 
+  const labelBoxStyle = {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    backgroundColor: "rgba(255, 249, 239, 0.95)",
+    borderWidth: 1,
+    borderColor: "rgba(47,37,27,0.25)",
+    maxWidth: 160,
+  };
+
+  const labelTextStyle = {
+    color: "#1E1A16",
+    fontSize: 12,
+    fontWeight: "800" as const,
+  };
+
   return (
     <SafeAreaView className="flex-1 bg-[#2A221A]" edges={["top"]}>
-      <ScrollView className="flex-1 bg-[#6B4E2E] px-4 pt-8">
-        {/* Header note – mer wow + nivå/stjärna */}
+      <ScrollView className="flex-1 bg-[#6B4E2E] px-4 pt-8" keyboardShouldPersistTaps="handled">
+        {/* Header */}
         <View
           className="mb-5 rounded-3xl bg-[#F7F0E4] border border-[#2F251B]/35 px-4 py-4"
           style={{ transform: [{ rotate: "2deg" }] }}
         >
           <View className="absolute -top-5 right-4">
-            {/* Nivå/Badge */}
             <View
               className="h-12 w-12 items-center justify-center rounded-full bg-[#FFF9EF]"
               style={{
@@ -112,7 +309,7 @@ export default function HomeScreen() {
           </View>
 
           <Text className="text-3xl font-extrabold text-[#1E1A16] text-center">
-            Museer i Skåne
+            Upplev Skåne
           </Text>
           <Text className="mt-1 text-sm text-[#3A2F25] text-center">
             Upptäck. Samla. Lås upp ⭐
@@ -120,18 +317,11 @@ export default function HomeScreen() {
           <View className="mt-2 h-[2px] bg-[#3A2F25]/25 rounded-full" />
         </View>
 
-        {/* Quick stats – mer kaos */}
+        {/* Quick stats */}
         <View className="mb-5 flex-row gap-3">
           <View
             className="flex-1 rounded-2xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4 items-center"
-            style={{
-              transform: [{ rotate: "-2deg" }],
-              shadowColor: "#000",
-              shadowOpacity: 0.15,
-              shadowRadius: 6,
-              shadowOffset: { width: 0, height: 3 },
-              elevation: 2,
-            }}
+            style={{ transform: [{ rotate: "-2deg" }] }}
           >
             <MaterialIcons name="place" size={22} color="#2F251B" />
             <Text className="mt-1 text-xs text-[#4A3E34]">Besökta</Text>
@@ -142,14 +332,7 @@ export default function HomeScreen() {
 
           <View
             className="flex-1 rounded-2xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4 items-center"
-            style={{
-              transform: [{ rotate: "2deg" }],
-              shadowColor: "#000",
-              shadowOpacity: 0.15,
-              shadowRadius: 6,
-              shadowOffset: { width: 0, height: 3 },
-              elevation: 2,
-            }}
+            style={{ transform: [{ rotate: "2deg" }] }}
           >
             <MaterialIcons name="task-alt" size={22} color="#2F251B" />
             <Text className="mt-1 text-xs text-[#4A3E34]">Utmaningar</Text>
@@ -157,135 +340,313 @@ export default function HomeScreen() {
               {completedTasksCount}/{totalTasks}
             </Text>
           </View>
-        </View>
 
-        {/* Progress – mer material */}
-        <View
-          className="mb-6 rounded-3xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4"
-          style={{
-            transform: [{ rotate: "-1deg" }],
-            shadowColor: "#000",
-            shadowOpacity: 0.18,
-            shadowRadius: 6,
-            shadowOffset: { width: 0, height: 3 },
-            elevation: 3,
-          }}
-        >
-          <View className="flex-row items-center justify-between">
-            <Text className="text-sm text-[#4A3E34]">Total progress</Text>
-            <Text className="text-sm font-bold text-[#1E1A16]">
-              {Math.round(progressPct)}%
+          {/* ✅ ENDA UI-ÄNDRINGEN: tredje ruta */}
+          <View
+            className="flex-1 rounded-2xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4 items-center"
+            style={{ transform: [{ rotate: "-1deg" }] }}
+          >
+            <MaterialIcons name="military-tech" size={22} color="#2F251B" />
+            <Text className="mt-1 text-xs text-[#4A3E34]">Badges</Text>
+            <Text className="text-xl font-bold text-[#1E1A16]">
+              {unlockedCount}/{BADGES.length}
             </Text>
           </View>
+        </View>
 
+        {/* Progress */}
+        <View className="mb-6 rounded-3xl bg-[#FFF9EF] border border-[#2F251B]/30 p-4">
+          <View className="flex-row items-center justify-between">
+            <Text className="text-sm text-[#4A3E34]">Total progress</Text>
+            <Text className="text-sm font-bold text-[#1E1A16]">{Math.round(progressPct)}%</Text>
+          </View>
           <View className="mt-2 h-3 rounded-full bg-[#2F251B]/20 overflow-hidden">
             <View style={{ width: `${progressPct}%` }} className="h-full bg-[#2E6F64]" />
           </View>
-
-          {/* Rivet edge */}
-          <View className="mt-3 h-[6px] bg-[#2F251B]/5" />
         </View>
 
-        {/* Suggested card – hero större + mer fokus */}
+        {/* Filterchips */}
+        <View className="mb-4">
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle={{ paddingRight: 12 }}
+          >
+            {CHIP_TYPES.map((t) => {
+              const active = t === selectedType;
+              return (
+                <Pressable
+                  key={t}
+                  onPress={() => setSelectedType(t)}
+                  style={{
+                    marginRight: 8,
+                    paddingHorizontal: 12,
+                    paddingVertical: 8,
+                    borderRadius: 999,
+                    backgroundColor: active ? "rgba(47,37,27,0.92)" : "rgba(255,249,239,0.90)",
+                    borderWidth: 1,
+                    borderColor: active ? "rgba(47,37,27,0.92)" : "rgba(47,37,27,0.25)",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 12,
+                      fontWeight: "800",
+                      color: active ? "#FFF9EF" : "#2F251B",
+                    }}
+                  >
+                    {t}
+                  </Text>
+                </Pressable>
+              );
+            })}
+          </ScrollView>
+
+          {/* liten rad under chips (valfri, men tydlig) */}
+          <Text className="mt-2 text-[11px] text-[#1E1A16]/70">
+            Filter: {selectedType}
+          </Text>
+        </View>
+      
+
+        {/* Map */}
+        <View className="mb-10">
+          <View className="flex-row items-center justify-between mb-3">
+            <Text className="text-xl font-semibold text-[#1E1A16]">Karta</Text>
+            {locationDenied ? (
+              <Text className="text-[11px] text-[#1E1A16]/70">Plats ej tillåten</Text>
+            ) : userPos ? (
+              <Text className="text-[11px] text-[#1E1A16]/70">GPS aktiv</Text>
+            ) : (
+              <Text className="text-[11px] text-[#1E1A16]/70">Hämtar…</Text>
+            )}
+          </View>
+
+          <View className="rounded-[28px] bg-[#2F251B]/40 p-[2px]">
+            <View className="rounded-[26px] bg-[#FFF9EF] border border-[#2F251B]/25 overflow-hidden">
+              {/* Buttons */}
+              <View style={{ position: "absolute", top: 12, left: 12, zIndex: 60, flexDirection: "row", gap: 8 }}>
+                <Pressable
+                  onPress={() => centerOnMe(true)}
+                  style={{ paddingHorizontal: 12, paddingVertical: 8, borderRadius: 16, backgroundColor: "rgba(47,37,27,0.92)" }}
+                >
+                  <Text style={{ color: "#FFF9EF", fontWeight: "800", fontSize: 12 }}>
+                    Min plats
+                  </Text>
+                </Pressable>
+
+                <Pressable
+                  onPress={() => fitToAllPins(true)}
+                  style={{ paddingHorizontal: 12, paddingVertical: 8, borderRadius: 16, backgroundColor: "rgba(47,37,27,0.92)" }}
+                >
+                  <Text style={{ color: "#FFF9EF", fontWeight: "800", fontSize: 12 }}>
+                    Visa alla
+                  </Text>
+                </Pressable>
+              </View>
+
+              <MapView
+                ref={mapRef}
+                provider={PROVIDER_DEFAULT}
+                style={{ width: "100%", height: 360 }}
+                region={region}
+                rotateEnabled={false}
+                pitchEnabled={false}
+                toolbarEnabled={false}
+                scrollEnabled={true}
+                zoomEnabled={true}
+                onRegionChangeComplete={(r) => setRegion(r)}
+              >
+                {/* USER: label + icon */}
+                {userPos && (
+                  <>
+                    <Marker
+                      coordinate={userPos}
+                      tappable={false}
+                      tracksViewChanges={false}
+                      tracksInfoWindowChanges={false}
+                      anchor={{ x: 0.5, y: 0 }}
+                      centerOffset={{ x: 0, y: -30 }}
+                    >
+                      <View pointerEvents="none" style={{ alignItems: "center" }}>
+                        <View style={labelBoxStyle}>
+                          <Text numberOfLines={1} style={labelTextStyle}>Du är här</Text>
+                        </View>
+                        <View
+                          style={{
+                            width: 10,
+                            height: 10,
+                            backgroundColor: "rgba(255, 249, 239, 0.95)",
+                            borderLeftWidth: 1,
+                            borderBottomWidth: 1,
+                            borderColor: "rgba(47,37,27,0.25)",
+                            transform: [{ rotate: "-45deg" }],
+                            marginTop: -5,
+                          }}
+                        />
+                      </View>
+                    </Marker>
+
+                    <Marker coordinate={userPos} tracksViewChanges={false} tracksInfoWindowChanges={false}>
+                      <View style={{ alignItems: "center" }}>
+                        <MaterialIcons name="person-pin-circle" size={30} color="#2F251B" />
+                      </View>
+                    </Marker>
+                  </>
+                )}
+
+                {/* ALL PLACES: label + icon */}
+                {visibleMarkers.map((p) => (
+                  <View key={p.id}>
+                    <Marker
+                      coordinate={{ latitude: p.latitude, longitude: p.longitude }}
+                      tappable={false}
+                      tracksViewChanges={false}
+                      tracksInfoWindowChanges={false}
+                      anchor={{ x: 0.5, y: 0 }}
+                      centerOffset={{ x: 0, y: -30 }}
+                    >
+                      <View pointerEvents="none" style={{ alignItems: "center" }}>
+                        <View
+                          style={{
+                            paddingHorizontal: 8,
+                            paddingVertical: 4,
+                            borderRadius: 12,
+                            backgroundColor: "rgba(255, 249, 239, 0.95)",
+                            borderWidth: 1,
+                            borderColor: "rgba(47,37,27,0.25)",
+                            maxWidth: 160,
+                          }}
+                        >
+                          <Text
+                            numberOfLines={1}
+                            style={{
+                              color: "#1E1A16",
+                              fontSize: 12,
+                              fontWeight: "800",
+                            }}
+                          >
+                            {p.namn}
+                          </Text>
+                        </View>
+
+                        <View
+                          style={{
+                            width: 10,
+                            height: 10,
+                            backgroundColor: "rgba(255, 249, 239, 0.95)",
+                            borderLeftWidth: 1,
+                            borderBottomWidth: 1,
+                            borderColor: "rgba(47,37,27,0.25)",
+                            transform: [{ rotate: "-45deg" }],
+                            marginTop: -5,
+                          }}
+                        />
+                      </View>
+                    </Marker>
+
+                    <Marker
+                      coordinate={{ latitude: p.latitude, longitude: p.longitude }}
+                      onPress={() =>
+                        router.push({
+                          pathname: "/sevardheter/[id]",
+                          params: { id: p.id },
+                        })
+                      }
+                      tracksViewChanges={false}
+                      tracksInfoWindowChanges={false}
+                    >
+                      <View style={{ alignItems: "center" }}>
+                        <MaterialIcons
+                          name={visitedMap[p.id] ? "place" : "location-on"}
+                          size={28}
+                          color={visitedMap[p.id] ? "#2E6F64" : "#D9A441"}
+                        />
+                      </View>
+                    </Marker>
+                  </View>
+                ))}
+              </MapView>
+
+              <View className="px-4 py-3">
+                <Text className="text-[11px] text-[#4A3E34]">
+                  Labels är alltid synliga ovanför markörer. Ikonen är alltid klickbar.
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          {/* Nearby list */}
+          {nearbySorted.length > 0 && (
+            <View className="mt-4">
+              <Text className="mb-2 text-sm font-semibold text-[#1E1A16]">Närmast dig</Text>
+
+              {(showAllNearby ? visibleNearbySorted : visibleNearbySorted.slice(0, 8)).map((p) => (
+                <Pressable
+                  key={p.id}
+                  onPress={() =>
+                    router.push({ pathname: "/sevardheter/[id]", params: { id: p.id } })
+                  }
+                  className="mb-2 rounded-2xl bg-white border border-[#2F251B]/15 px-4 py-3 flex-row items-center"
+                >
+                  <Text className="text-lg mr-3">{visitedMap[p.id] ? "✅" : "📍"}</Text>
+                  <View className="flex-1">
+                    <Text className="text-sm font-extrabold text-[#1E1A16]">{p.namn}</Text>
+                    <Text className="text-[11px] text-[#4A3E34]">
+                      {p.distKm.toFixed(1)} km • {p.typ}
+                    </Text>
+                  </View>
+                  <MaterialIcons name="chevron-right" size={20} color="#2F251B" />
+                </Pressable>
+              ))}
+
+              {visibleNearbySorted.length > 8 && (
+                <Pressable
+                  onPress={() => setShowAllNearby((v) => !v)}
+                  className="mt-2 rounded-2xl bg-[#2F251B]/10 border border-[#2F251B]/20 px-4 py-3 items-center"
+                >
+                  <Text className="text-xs font-extrabold text-[#2F251B]">
+                    {showAllNearby ? "Visa färre" : `Visa alla (${nearbySorted.length})`}
+                  </Text>
+                </Pressable>
+              )}
+            </View>
+          )}
+        </View>
+
+        {/* Suggested */}
         {suggested && (
           <View className="mb-10">
-            <Text className="mb-3 text-xl font-semibold text-[#1E1A16]">
-              Förslag till nästa besök
-            </Text>
-
+            <Text className="mb-3 text-xl font-semibold text-[#1E1A16]">Förslag till nästa besök</Text>
             <Pressable
               onPress={() =>
                 router.push({ pathname: "/sevardheter/[id]", params: { id: suggested.id } })
               }
               className="rounded-[28px] bg-[#2F251B]/40 p-[2px]"
-              style={{
-                transform: [{ rotate: "2deg" }],
-                shadowColor: "#000",
-                shadowOpacity: 0.22,
-                shadowRadius: 2,
-                shadowOffset: { width: 0, height: 4 },
-                elevation: 4,
-              }}
             >
               <View className="rounded-[26px] bg-[#FFF9EF] border border-[#2F251B]/25 overflow-hidden">
-                {/* Tape accents – 2 lägen */}
-                <View
-                  style={{
-                    position: "absolute",
-                    top: -8,
-                    left: 16,
-                    width: 72,
-                    height: 24,
-                    backgroundColor: "#E7D7A6",
-                    opacity: 0.65,
-                    borderRadius: 6,
-                    borderWidth: 1,
-                    borderColor: "rgba(47,37,27,0.18)",
-                    zIndex: 10,
-                  }}
-                />
-                <View
-                  style={{
-                    position: "absolute",
-                    top: -8,
-                    right: 30,
-                    width: 60,
-                    height: 22,
-                    backgroundColor: "#E7D7A6",
-                    opacity: 0.6,
-                    borderRadius: 6,
-                    borderWidth: 1,
-                    borderColor: "rgba(47,37,27,0.18)",
-                    zIndex: 10,
-                  }}
-                />
-
-                <Image
-                  source={{ uri: suggested.bild }}
-                  style={{ width: "100%", height: 210 }}
-                  resizeMode="cover"
-                />
-
+                <Image source={{ uri: suggested.bild }} style={{ width: "100%", height: 210 }} />
                 <View className="p-5">
-                  <Text className="text-2xl font-extrabold text-[#1E1A16]">
-                    {suggested.namn}
-                  </Text>
-                  <Text className="mt-1 text-sm text-[#4A3E34]">
-                    {suggested.adress}
-                  </Text>
+                  <Text className="text-2xl font-extrabold text-[#1E1A16]">{suggested.namn}</Text>
+                  <Text className="mt-1 text-sm text-[#4A3E34]">{suggested.adress}</Text>
                 </View>
-
-                {/* Rivet kant */}
-                <View className="h-[8px] bg-[#2F251B]/6" />
               </View>
             </Pressable>
           </View>
         )}
 
-        {/* ✅ DEV reset längst ner */}
+        {/* DEV reset */}
         <View className="pb-10">
           <Pressable
             onPress={confirmDevReset}
             className="mt-4 w-full flex-row items-center justify-center rounded-2xl bg-[#2F251B]/25 border border-[#2F251B]/30 px-4 py-4"
-            style={{
-              shadowColor: "#000",
-              shadowOpacity: 0.15,
-              shadowRadius: 6,
-              shadowOffset: { width: 0, height: 3 },
-              elevation: 2,
-            }}
           >
             <MaterialIcons name="delete-forever" size={20} color="#FFF9EF" />
-            <Text className="ml-2 text-sm font-extrabold text-[#FFF9EF]">
-              DEV: Rensa appdata
-            </Text>
+            <Text className="ml-2 text-sm font-extrabold text-[#FFF9EF]">DEV: Rensa appdata</Text>
           </Pressable>
-
-          <Text className="mt-2 text-center text-[11px] text-[#F7F0E4]/80">
-            Bara för utveckling – rensar besök, utmaningar, badges och profilbild.
-          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 }
+

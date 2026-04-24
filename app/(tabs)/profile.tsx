@@ -9,9 +9,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { BADGES } from "../../lib/badgeDefinitions";
 import { getUnlockedBadges, type UnlockedBadges } from "../../lib/badgeStorage";
 import {
-    clearProfilePhotoUri,
-    getProfilePhotoUri,
-    setProfilePhotoUri,
+  clearProfilePhotoUri,
+  getProfilePhotoUri,
+  setProfilePhotoUri,
 } from "../../lib/profilePhotoStorage";
 import { getCompletedTasks } from "../../lib/taskStorage";
 import { getVisitedPlaces } from "../../lib/visitStorage";
@@ -453,7 +453,7 @@ export default function ProfileScreen() {
             Alla utmärkelser
           </Text>
 
-          <PaperCard rotateDeg={1}>
+          <PaperCard rotateDeg={0}>
             <TapePair />
 
             <Text className="text-sm text-[#4A3E34]">

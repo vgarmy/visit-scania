@@ -1,493 +1,2900 @@
 [
   {
-    "id": "s1",
-    "namn": "Sofiero Slott",
-    "typ": "Slott & trädgård",
-    "adress": "Sofierovägen 131, 254 82 Helsingborg",
+    "id": "m001",
+    "namn": "Malmö museum (Malmöhus slott)",
+    "typ": "Kulturhistoriskt and naturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.605,
+    "longitud": 12.9875,
     "bild": "https://picsum.photos/800/500?random=1",
-    "intro": "Ett kungligt slott med prisbelönta trädgårdar och fantastisk utsikt över Öresund.",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka kulturhistoriskt and naturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Malmöhus slott ligger på Slottsholmen i centrala Malmö och är Nordens äldsta bevarade renässansslott. Här finns flera museer samlade inom samma område, med utställningar om Malmös historia, natur, teknik och sjöfart. Området omges av vallgrav, grönområden och historiska byggnader som tillsammans skapar en tydlig känsla av stadens långa historia.",
     "utmaningar": [
-      { "id": "s1-u1", "text": "Hitta en ros som du tycker är extra fin" },
-      { "id": "s1-u2", "text": "Stå stilla i trädgården i 30 sekunder och lyssna" },
-      { "id": "s1-u3", "text": "Läs en skylt om slottets historia" }
+      {
+        "id": "m001-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m001-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m001-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m001-u4",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      },
+      {
+        "id": "m001-u5",
+        "text": "Hitta ett föremål som är en kopia"
+      },
+      {
+        "id": "m001-u6",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m001-u7",
+        "text": "Hitta något som är äldre än 100 år"
+      }
     ]
   },
   {
-    "id": "s2",
-    "namn": "Turning Torso",
-    "typ": "Arkitektur & landmärke",
-    "adress": "Lilla Varvsgatan 14, 211 15 Malmö",
+    "id": "m002",
+    "namn": "Malmö Konstmuseum",
+    "typ": "Konstmuseum",
+    "kategori": "Konst",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6047,
+    "longitud": 12.9869,
     "bild": "https://picsum.photos/800/500?random=2",
-    "intro": "Nordens högsta byggnad och ett ikoniskt landmärke i Malmö.",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka konstmuseum och samla stjärnor i appen.",
+    "beskrivning": "Malmö Konstmuseum är beläget inne i Malmöhus slott och består av stora salar och rum med konst från olika tidsperioder. Här visas målningar, skulpturer och design med fokus på nordisk konst. Museets miljö präglas av lugn, rymd och historiska rum som ger konsten en tydlig inramning.",
     "utmaningar": [
-      { "id": "s2-u1", "text": "Titta upp hela vägen till toppen" },
-      { "id": "s2-u2", "text": "Fundera på varför huset är vridet" },
-      { "id": "s2-u3", "text": "Ta reda på hur högt huset är" },
-      { "id": "s2-u4", "text": "Ta reda på hur många våningar huset har" }
+      {
+        "id": "m002-u1",
+        "text": "Hitta ett konstverk som känns lugnt"
+      },
+      {
+        "id": "m002-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m002-u3",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m002-u4",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m002-u5",
+        "text": "Hitta ett verk som känns oväntat"
+      }
     ]
   },
   {
-    "id": "s3",
-    "namn": "Ales stenar",
-    "typ": "Historia & natur",
-    "adress": "Kåseberga, 271 78 Löderup",
+    "id": "m003",
+    "namn": "Malmö Konsthall",
+    "typ": "Konsthall",
+    "kategori": "Konst",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.5954,
+    "longitud": 12.99913,
     "bild": "https://picsum.photos/800/500?random=3",
-    "intro": "En mystisk skeppssättning från järnåldern med vidsträckt havsutsikt.",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka konsthall och samla stjärnor i appen.",
+    "beskrivning": "Malmö Konsthall är en av Europas största hallar för samtidskonst och ligger i centrala Malmö. Byggnaden kännetecknas av öppna ytor, högt i tak och ett jämnt naturligt ljus som förändras under dagen. Utställningarna varierar över tid och platsen erbjuder en modern och avskalad miljö för att uppleva samtida konst.",
     "utmaningar": [
-      { "id": "s3-u1", "text": "Gå runt hela stenskeppets form" },
-      { "id": "s3-u2", "text": "Tänk på vem som kan ha byggt detta" },
-      { "id": "s3-u3", "text": "Hitta den sten som ser störst ut" }
+      {
+        "id": "m003-u1",
+        "text": "Hitta ett konstverk som förändras när du går nära"
+      },
+      {
+        "id": "m003-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m003-u3",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m003-u4",
+        "text": "Hitta ett verk du vill se igen"
+      },
+      {
+        "id": "m003-u5",
+        "text": "Titta på ett verk i 60 sekunder"
+      }
     ]
   },
   {
-    "id": "s4",
-    "namn": "Kullaberg",
-    "typ": "Natur & utsikt",
-    "adress": "Italienska vägen 323, 263 77 Mölle",
-    "bild": "https://picsum.photos/800/500?random=4",
-    "intro": "Dramatiska klippor, vandringsleder och vidsträckt utsikt över havet.",
-    "utmaningar": [
-      { "id": "s4-u1", "text": "Hitta en plats med utsikt över havet" },
-      { "id": "s4-u2", "text": "Lyssna efter fåglar i 20 sekunder" },
-      { "id": "s4-u3", "text": "Plocka upp en sten som ser speciell ut" }
-    ]
-  },
-  {
-    "id": "s5",
-    "namn": "Lunds domkyrka",
-    "typ": "Historia & sevärdhet",
-    "adress": "Kyrkogatan 6, 222 22 Lund",
-    "bild": "https://picsum.photos/800/500?random=5",
-    "intro": "En imponerande domkyrka från 1100-talet mitt i Lunds centrum.",
-    "utmaningar": [
-      { "id": "s5-u1", "text": "Hitta den astronomiska klockan" },
-      { "id": "s5-u2", "text": "Titta upp i taket och studera detaljerna" },
-      { "id": "s5-u3", "text": "Gå ett varv runt byggnaden" }
-    ]
-  },
-  {
-    "id": "s6",
-    "namn": "Stenshuvud Nationalpark",
-    "typ": "Natur & vandring",
-    "adress": "607 97 Kivik",
-    "bild": "https://picsum.photos/800/500?random=6",
-    "intro": "Nationalpark med skog, strand och utsikt från toppen av Stenshuvud.",
-    "utmaningar": [
-      { "id": "s6-u1", "text": "Gå till utsiktsplatsen på toppen" },
-      { "id": "s6-u2", "text": "Hitta något som luktar gott i naturen" },
-      { "id": "s6-u3", "text": "Stå stilla och lyssna på vinden" }
-    ]
-  },
-  {
-    "id": "s7",
-    "namn": "Kärnan",
-    "typ": "Historia & utsikt",
-    "adress": "Slottshagsgatan, 250 07 Helsingborg",
-    "bild": "https://picsum.photos/800/500?random=7",
-    "intro": "Det medeltida tornet som är det sista som finns kvar av Helsingborgs slott.",
-    "utmaningar": [
-      { "id": "s7-u1", "text": "Räkna hur många trappsteg du går" },
-      { "id": "s7-u2", "text": "Titta ut över staden från toppen" },
-      { "id": "s7-u3", "text": "Hitta en flagga i närheten" },
-      { "id": "s7-u4", "text": "Leta efter något riktigt gammalt i muren" }
-    ]
-  },
-  {
-    "id": "s8",
-    "namn": "Folkets Park Malmö",
-    "typ": "Park & nöje",
-    "adress": "Amiralsgatan 35, 214 37 Malmö",
-    "bild": "https://picsum.photos/800/500?random=8",
-    "intro": "En livlig park med lekplatser, grönområden och aktiviteter.",
-    "utmaningar": [
-      { "id": "s8-u1", "text": "Hitta en lekplats" },
-      { "id": "s8-u2", "text": "Sätt dig på en bänk i 20 sekunder" }
-    ]
-  },
-  {
-    "id": "s9",
-    "namn": "Ven - Kyrkbacken",
-    "typ": "Ö & natur",
-    "adress": "Kyrkbacken, 260 13 Sankt Ibb",
-    "bild": "https://picsum.photos/800/500?random=9",
-    "intro": "Charmig by på Ven med utsikt över havet och små gränder.",
-    "utmaningar": [
-      { "id": "s9-u1", "text": "Titta ut över havet" },
-      { "id": "s9-u2", "text": "Hitta ett hus i en ovanlig färg" },
-      { "id": "s9-u3", "text": "Lyssna efter måsar" }
-    ]
-  },
-  {
-    "id": "s10",
-    "namn": "Ribersborgsstranden",
-    "typ": "Strand & natur",
-    "adress": "Limhamnsvägen, 217 59 Malmö",
-    "bild": "https://picsum.photos/800/500?random=10",
-    "intro": "Populär strand i Malmö med lång brygga och utsikt mot Öresundsbron.",
-    "utmaningar": [
-      { "id": "s10-u1", "text": "Känn på vattnet" },
-      { "id": "s10-u2", "text": "Hitta tre olika stenar" },
-      { "id": "s10-u3", "text": "Titta mot bron" },
-      { "id": "s10-u4", "text": "Gå femtio steg längs stranden" },
-      { "id": "s10-u5", "text": "Lyssna på vågorna i 15 sekunder" }
-    ]
-  },
-  {
-    "id": "s11",
-    "namn": "Dalby Söderskog",
-    "typ": "Natur & skog",
-    "adress": "Dalby Söderskog, 247 91 Dalby",
-    "bild": "https://picsum.photos/800/500?random=11",
-    "intro": "En gammal lövskog med lugn stämning och många vandringsstigar.",
-    "utmaningar": [
-      { "id": "s11-u1", "text": "Hitta ett riktigt stort träd" },
-      { "id": "s11-u2", "text": "Lyssna efter fåglar" },
-      { "id": "s11-u3", "text": "Titta upp i trädkronorna" }
-    ]
-  },
-  {
-    "id": "s12",
-    "namn": "Hovs Hallar",
-    "typ": "Natur & klippor",
-    "adress": "Hovshallavägen 160, 269 91 Båstad",
-    "bild": "https://picsum.photos/800/500?random=12",
-    "intro": "Dramatiska klippor och stenstränder vid Hallandsåsen.",
-    "utmaningar": [
-      { "id": "s12-u1", "text": "Hitta en rund sten" },
-      { "id": "s12-u2", "text": "Titta ut över havet" },
-      { "id": "s12-u3", "text": "Gå försiktigt ner mot stranden" },
-      { "id": "s12-u4", "text": "Lyssna på vinden" }
-    ]
-  },
-  {
-    "id": "s13",
-    "namn": "Kungsparken Malmö",
-    "typ": "Park & natur",
-    "adress": "Slottsgatan, 211 33 Malmö",
-    "bild": "https://picsum.photos/800/500?random=13",
-    "intro": "Grön park med kanaler, broar och stora träd.",
-    "utmaningar": [
-      { "id": "s13-u1", "text": "Gå över en bro" },
-      { "id": "s13-u2", "text": "Hitta vatten" },
-      { "id": "s13-u3", "text": "Sätt dig i gräset" },
-      { "id": "s13-u4", "text": "Titta på en fågel" }
-    ]
-  },
-  {
-    "id": "s14",
-    "namn": "Skanörs hamn",
-    "typ": "Hamn & kust",
-    "adress": "Hamnen, 239 30 Skanör",
-    "bild": "https://picsum.photos/800/500?random=14",
-    "intro": "Liten hamn med båtar, strand och kustkänsla.",
-    "utmaningar": [
-      { "id": "s14-u1", "text": "Räkna båtar" },
-      { "id": "s14-u2", "text": "Lyssna på vattnet" }
-    ]
-  },
-  {
-    "id": "s15",
-    "namn": "Falsterbo Strand",
-    "typ": "Strand & natur",
-    "adress": "Falsterbo strand, 239 40 Falsterbo",
-    "bild": "https://picsum.photos/800/500?random=15",
-    "intro": "Lång sandstrand med klart vatten och öppna vyer.",
-    "utmaningar": [
-      { "id": "s15-u1", "text": "Gå ner till vattnet" },
-      { "id": "s15-u2", "text": "Hitta ett snäckskal" },
-      { "id": "s15-u3", "text": "Titta ut över horisonten" }
-    ]
-  },
-  {
-    "id": "s16",
-    "namn": "Söderåsen Nationalpark",
-    "typ": "Natur & vandring",
-    "adress": "Skäralid 747, 264 53 Ljungbyhed",
-    "bild": "https://picsum.photos/800/500?random=16",
-    "intro": "Djupa dalar, bokskog och vandringsleder i varierad natur.",
-    "utmaningar": [
-      { "id": "s16-u1", "text": "Gå en bit på leden" },
-      { "id": "s16-u2", "text": "Lyssna på skogen" },
-      { "id": "s16-u3", "text": "Hitta en utsiktsplats" },
-      { "id": "s16-u4", "text": "Titta ner i dalen" }
-    ]
-  },
-  {
-    "id": "s17",
-    "namn": "Mölle hamn",
-    "typ": "Hamn & kust",
-    "adress": "Mölle hamn, 263 77 Mölle",
-    "bild": "https://picsum.photos/800/500?random=17",
-    "intro": "Liten hamn omgiven av kullar och hav.",
-    "utmaningar": [
-      { "id": "s17-u1", "text": "Titta på båtarna" },
-      { "id": "s17-u2", "text": "Lyssna på vågorna" }
-    ]
-  },
-  {
-    "id": "s18",
-    "namn": "Ystad gamla stad",
-    "typ": "Stad & historia",
-    "adress": "Stortorget, 271 43 Ystad",
-    "bild": "https://picsum.photos/800/500?random=18",
-    "intro": "Kullerstensgator och färgglada korsvirkeshus.",
-    "utmaningar": [
-      { "id": "s18-u1", "text": "Hitta ett korsvirkeshus" },
-      { "id": "s18-u2", "text": "Gå på en kullerstensgata" },
-      { "id": "s18-u3", "text": "Titta på ett torg" }
-    ]
-  },
-  {
-    "id": "s19",
-    "namn": "Kivik hamn",
-    "typ": "Hamn & kust",
-    "adress": "Hamnen, 277 30 Kivik",
-    "bild": "https://picsum.photos/800/500?random=19",
-    "intro": "Liten hamn vid Österlen med närhet till strand.",
-    "utmaningar": [
-      { "id": "s19-u1", "text": "Titta ut över havet" },
-      { "id": "s19-u2", "text": "Räkna båtar" },
-      { "id": "s19-u3", "text": "Gå längs piren" }
-    ]
-  },
-  {
-    "id": "s20",
-    "namn": "Pildammsparken",
-    "typ": "Park & natur",
-    "adress": "Pildammsvägen, 217 45 Malmö",
-    "bild": "https://picsum.photos/800/500?random=20",
-    "intro": "Stor park med dammar och öppna gräsytor.",
-    "utmaningar": [
-      { "id": "s20-u1", "text": "Gå runt dammen" },
-      { "id": "s20-u2", "text": "Hitta en fågel" },
-      { "id": "s20-u3", "text": "Sätt dig på en bänk" }
-    ]
-  },
-  {
-    "id": "s21",
-    "namn": "Båstad hamn",
-    "typ": "Hamn & stad",
-    "adress": "Småbåtshamnen, 269 33 Båstad",
-    "bild": "https://picsum.photos/800/500?random=21",
-    "intro": "Somrig hamn med strand och promenadstråk.",
-    "utmaningar": [
-      { "id": "s21-u1", "text": "Gå längs vattnet" },
-      { "id": "s21-u2", "text": "Titta på båtar" }
-    ]
-  },
-  {
-    "id": "s22",
-    "namn": "Lomma strand",
-    "typ": "Strand & kust",
-    "adress": "Strandvägen, 234 33 Lomma",
-    "bild": "https://picsum.photos/800/500?random=22",
-    "intro": "Barnvänlig strand med långgrunt vatten.",
-    "utmaningar": [
-      { "id": "s22-u1", "text": "Gå i sanden" },
-      { "id": "s22-u2", "text": "Känn på vattnet" },
-      { "id": "s22-u3", "text": "Hitta något i sanden" }
-    ]
-  },
-  {
-    "id": "s23",
-    "namn": "Öresundsbron utsiktspunkt",
-    "typ": "Utsikt & landmärke",
-    "adress": "Barsebäckshamn, 246 57 Barsebäck",
-    "bild": "https://picsum.photos/800/500?random=23",
-    "intro": "Bra plats för att se Öresundsbron och trafiken över sundet.",
-    "utmaningar": [
-      { "id": "s23-u1", "text": "Försök se bron tydligt i horisonten" },
-      { "id": "s23-u2", "text": "Lyssna på vinden från havet" },
-      { "id": "s23-u3", "text": "Ta en panoramavy med blicken" }
-    ]
-  },
-  {
-    "id": "s24",
-    "namn": "Lilla Torg",
-    "typ": "Stad & torg",
-    "adress": "Lilla Torg, 211 34 Malmö",
-    "bild": "https://picsum.photos/800/500?random=24",
-    "intro": "Livligt torg med restauranger och historisk atmosfär i Malmö.",
-    "utmaningar": [
-      { "id": "s24-u1", "text": "Hitta en uteservering" },
-      { "id": "s24-u2", "text": "Läs ett gatunamn runt torget" }
-    ]
-  },
-  {
-    "id": "s25",
-    "namn": "Stortorget Lund",
-    "typ": "Stad & historia",
-    "adress": "Stortorget, 222 23 Lund",
-    "bild": "https://picsum.photos/800/500?random=25",
-    "intro": "Historiskt torg mitt i Lund med stadsliv och gamla byggnader.",
-    "utmaningar": [
-      { "id": "s25-u1", "text": "Hitta en historisk byggnad" },
-      { "id": "s25-u2", "text": "Sätt dig och observera folk" },
-      { "id": "s25-u3", "text": "Gå ett varv runt torget" }
-    ]
-  },
-  {
-    "id": "s26",
-    "namn": "Skanörs strand",
-    "typ": "Strand & natur",
-    "adress": "Falsterbonäset, 239 30 Skanör",
-    "bild": "https://picsum.photos/800/500?random=26",
-    "intro": "Vit sandstrand med lugn och öppna vyer.",
-    "utmaningar": [
-      { "id": "s26-u1", "text": "Gå barfota i sanden" },
-      { "id": "s26-u2", "text": "Hitta en snäcka" },
-      { "id": "s26-u3", "text": "Titta ut över havet" }
-    ]
-  },
-  {
-    "id": "s27",
-    "namn": "Höganäs hamn",
-    "typ": "Hamn & kust",
-    "adress": "Hamnplanen, 263 39 Höganäs",
-    "bild": "https://picsum.photos/800/500?random=27",
-    "intro": "Mysig hamn med små caféer och keramiktradition.",
-    "utmaningar": [
-      { "id": "s27-u1", "text": "Räkna båtar i hamnen" },
-      { "id": "s27-u2", "text": "Hitta en keramikbutik" }
-    ]
-  },
-  {
-    "id": "s28",
-    "namn": "Råby sjöpark",
-    "typ": "Park & natur",
-    "adress": "Råbyvägen, 224 78 Lund",
-    "bild": "https://picsum.photos/800/500?random=28",
-    "intro": "Grön park med sjö och promenadstigar i Lund.",
-    "utmaningar": [
-      { "id": "s28-u1", "text": "Gå runt sjön" },
-      { "id": "s28-u2", "text": "Lyssna på fåglar" },
-      { "id": "s28-u3", "text": "Sätt dig vid vattnet" }
-    ]
-  },
-  {
-    "id": "s29",
-    "namn": "Christinehof slott",
-    "typ": "Slott & historia",
-    "adress": "Christinehof, 273 57 Brösarp",
-    "bild": "https://picsum.photos/800/500?random=29",
-    "intro": "Slott omgivet av natur i Österlen.",
-    "utmaningar": [
-      { "id": "s29-u1", "text": "Gå runt slottet" },
-      { "id": "s29-u2", "text": "Läs om platsens historia" },
-      { "id": "s29-u3", "text": "Hitta en fin vy" }
-    ]
-  },
-  {
-    "id": "s30",
-    "namn": "Åhus strand",
-    "typ": "Strand & kust",
-    "adress": "Täppetstranden, 296 38 Åhus",
-    "bild": "https://picsum.photos/800/500?random=30",
-    "intro": "Lång sandstrand vid östkusten med sommaraktiviteter.",
-    "utmaningar": [
-      { "id": "s30-u1", "text": "Gå längs stranden" },
-      { "id": "s30-u2", "text": "Känn på sanden" },
-      { "id": "s30-u3", "text": "Titta ut över havet" },
-      { "id": "s30-u4", "text": "Hitta något i vattenbrynet" }
-    ]
-  },
-  {
-    "id": "s31",
-    "namn": "Malmö Museer (Slottet)",
-    "typ": "Museum & historia",
-    "adress": "Malmöhusvägen 6, 211 18 Malmö",
-    "bild": "https://picsum.photos/800/500?random=31",
-    "intro": "Ett av Nordens äldsta bevarade renässansslott med flera museiutställningar.",
-    "utmaningar": [
-      { "id": "s31-u1", "text": "Gå in i slottsområdet" },
-      { "id": "s31-u2", "text": "Hitta något som ser riktigt gammalt ut" },
-      { "id": "s31-u3", "text": "Läs om en historisk period" }
-    ]
-  },
-  {
-    "id": "s32",
+    "id": "m004",
     "namn": "Moderna Museet Malmö",
-    "typ": "Museum & konst",
-    "adress": "Gasverksgatan 22, 211 29 Malmö",
-    "bild": "https://picsum.photos/800/500?random=32",
-    "intro": "Museum för modern och samtida konst i en gammal kraftstation.",
+    "typ": "Konstmuseum",
+    "kategori": "Konst",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6046,
+    "longitud": 13.0096,
+    "bild": "https://picsum.photos/800/500?random=4",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka konstmuseum och samla stjärnor i appen.",
+    "beskrivning": "Moderna Museet Malmö ligger i en ombyggd industribyggnad mitt i staden och fokuserar på modern och samtida konst. Museet består av ljusa utställningsrum, större salar och öppna ytor för tillfälliga utställningar. Arkitekturen skapar en tydlig kontrast mellan historisk byggnad och modern konst.",
     "utmaningar": [
-      { "id": "s32-u1", "text": "Hitta ett konstverk du inte förstår" },
-      { "id": "s32-u2", "text": "Stå framför ett verk i 20 sekunder" }
+      {
+        "id": "m004-u1",
+        "text": "Hitta ett konstverk som känns oväntat"
+      },
+      {
+        "id": "m004-u2",
+        "text": "Hitta ett konstverk som känns lugnt"
+      },
+      {
+        "id": "m004-u3",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m004-u4",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m004-u5",
+        "text": "Hitta ett verk du vill se igen"
+      }
     ]
   },
   {
-    "id": "s33",
-    "namn": "Kulturen i Lund",
-    "typ": "Museum & kulturhistoria",
-    "adress": "Tegnérplatsen 6, 223 50 Lund",
-    "bild": "https://picsum.photos/800/500?random=33",
-    "intro": "Friluftsmuseum och kulturhistoriskt museum mitt i Lund.",
+    "id": "m005",
+    "namn": "Disgusting Food Museum",
+    "typ": "Specialmuseum",
+    "kategori": "Museum",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6012,
+    "longitud": 13.0013,
+    "bild": "https://picsum.photos/800/500?random=5",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka specialmuseum och samla stjärnor i appen.",
+    "beskrivning": "Disgusting Food Museum är ett museum i centrala Malmö som visar maträtter från hela världen som ofta uppfattas som ovanliga eller utmanande. Utställningen består av montrar, dofter och objekt som speglar hur mat och kultur varierar mellan olika delar av världen.",
     "utmaningar": [
-      { "id": "s33-u1", "text": "Gå in i ett gammalt hus" },
-      { "id": "s33-u2", "text": "Hitta ett föremål från förr i tiden" },
-      { "id": "s33-u3", "text": "Jämför gammalt och nytt" }
+      {
+        "id": "m005-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m005-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m005-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m005-u4",
+        "text": "Hitta något med stark färg"
+      },
+      {
+        "id": "m005-u5",
+        "text": "Hitta något med spännande form"
+      }
     ]
   },
   {
-    "id": "s34",
-    "namn": "Tekniska Museet Malmö",
-    "typ": "Museum & teknik",
-    "adress": "Södra Promenaden 28, 211 38 Malmö",
-    "bild": "https://picsum.photos/800/500?random=34",
-    "intro": "Teknik- och sjöfartshistoria med stora maskiner och fordon.",
+    "id": "m006",
+    "namn": "Teknikens and Sjöfartens hus (Malmö)",
+    "typ": "Teknikmuseum",
+    "kategori": "Museum",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.605,
+    "longitud": 12.98306,
+    "bild": "https://picsum.photos/800/500?random=6",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka teknikmuseum och samla stjärnor i appen.",
+    "beskrivning": "Teknikens och Sjöfartens hus ligger vid Malmöhus och fokuserar på teknik, sjöfart och industrihistoria. Här finns maskiner, fordon, modeller och marina objekt som visar hur teknisk utveckling har påverkat samhället och Malmös historia.",
     "utmaningar": [
-      { "id": "s34-u1", "text": "Hitta ett gammalt fordon" },
-      { "id": "s34-u2", "text": "Läs om en uppfinning" }
+      {
+        "id": "m006-u1",
+        "text": "Hitta en maskin eller teknisk modell"
+      },
+      {
+        "id": "m006-u2",
+        "text": "Hitta något som rör energi eller rörelse"
+      },
+      {
+        "id": "m006-u3",
+        "text": "Hitta en knapp, spak eller ratt"
+      },
+      {
+        "id": "m006-u4",
+        "text": "Hitta något som rör sig eller blinkar"
+      },
+      {
+        "id": "m006-u5",
+        "text": "Hitta en interaktiv del"
+      }
     ]
   },
   {
-    "id": "s35",
-    "namn": "Helsingborgs stadsmuseum",
-    "typ": "Museum & historia",
-    "adress": "Drottninggatan 15, 252 21 Helsingborg",
-    "bild": "https://picsum.photos/800/500?random=35",
-    "intro": "Museum om Helsingborgs historia från forntid till nutid.",
+    "id": "m007",
+    "namn": "Form/Design Center",
+    "typ": "Designmuseum",
+    "kategori": "Museum",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6073,
+    "longitud": 12.9983,
+    "bild": "https://picsum.photos/800/500?random=7",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka designmuseum och samla stjärnor i appen.",
+    "beskrivning": "Form/Design Center är beläget i ett äldre magasin i centrala Malmö och fokuserar på design, arkitektur och formgivning. Lokalerna används för tillfälliga utställningar som visar hur design påverkar vardag, samhälle och miljö.",
     "utmaningar": [
-      { "id": "s35-u1", "text": "Hitta en gammal karta" },
-      { "id": "s35-u2", "text": "Läs om stadens ursprung" }
+      {
+        "id": "m007-u1",
+        "text": "Hitta ett objekt där form and funktion möts"
+      },
+      {
+        "id": "m007-u2",
+        "text": "Hitta ett objekt med tydlig formgivning"
+      },
+      {
+        "id": "m007-u3",
+        "text": "Hitta ett föremål i trä"
+      },
+      {
+        "id": "m007-u4",
+        "text": "Hitta ett föremål i metall"
+      },
+      {
+        "id": "m007-u5",
+        "text": "Hitta ett objekt du skulle vilja ha hemma"
+      }
     ]
   },
   {
-    "id": "s36",
+    "id": "m008",
+    "namn": "Kommendanthuset",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6053,
+    "longitud": 12.9864,
+    "bild": "https://picsum.photos/800/500?random=8",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Kommendanthuset är en historisk byggnad vid Malmöhus och har tidigare använts som bostad för militär personal. I dag visas utställningar som berättar om livet kring slottet och Malmös historia i mindre, tidstypiska rum.",
+    "utmaningar": [
+      {
+        "id": "m008-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m008-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m008-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m008-u4",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      },
+      {
+        "id": "m008-u5",
+        "text": "Hitta en person som nämns i en utställning"
+      }
+    ]
+  },
+  {
+    "id": "m009",
+    "namn": "Ebbas hus",
+    "typ": "Specialmuseum",
+    "kategori": "Museum",
+    "adress": "Malmö, Skåne",
+    "latitud": 55.6019,
+    "longitud": 12.9946,
+    "bild": "https://picsum.photos/800/500?random=9",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka specialmuseum och samla stjärnor i appen.",
+    "beskrivning": "Ebbas hus är ett bevarat bostadshus i Malmö som står kvar nästan precis som det gjorde under mitten av 1900-talet. Här visas möbler, föremål och rum som ger en tydlig inblick i vardagsliv från en annan tid.",
+    "utmaningar": [
+      {
+        "id": "m009-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m009-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m009-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m009-u4",
+        "text": "Hitta något med stark färg"
+      },
+      {
+        "id": "m009-u5",
+        "text": "Hitta något med spännande form"
+      }
+    ]
+  },
+  {
+    "id": "m010",
+    "namn": "Teatermuseet (Malmö)",
+    "typ": "Specialmuseum",
+    "kategori": "Museum",
+    "adress": "Malmö, Skåne",
+    "bild": "https://picsum.photos/800/500?random=10",
+    "intro": "Ett besöksmål i Malmö där du kan upptäcka specialmuseum och samla stjärnor i appen.",
+    "beskrivning": "Teatermuseet (Malmö) är ett museum i Malmö för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m010-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m010-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m010-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m010-u4",
+        "text": "Hitta något med stark färg"
+      },
+      {
+        "id": "m010-u5",
+        "text": "Hitta något med spännande form"
+      }
+    ]
+  },
+  {
+    "id": "m011",
+    "namn": "Kulturen",
+    "typ": "Friluftsmuseum and kulturhistoria",
+    "kategori": "Museum",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=11",
+    "intro": "Ett besöksmål i Lund där du kan upptäcka friluftsmuseum and kulturhistoria och samla stjärnor i appen.",
+    "beskrivning": "Kulturen är ett museum i Lund för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m011-u1",
+        "text": "Hitta en äldre byggnad"
+      },
+      {
+        "id": "m011-u2",
+        "text": "Hitta ett hus av trä"
+      },
+      {
+        "id": "m011-u3",
+        "text": "Hitta en hantverksdetalj"
+      },
+      {
+        "id": "m011-u4",
+        "text": "Hitta ett odlings- eller trädgårdsområde"
+      },
+      {
+        "id": "m011-u5",
+        "text": "Hitta en plats med utsikt"
+      },
+      {
+        "id": "m011-u6",
+        "text": "Hitta ett historiskt bostadshus"
+      },
+      {
+        "id": "m011-u7",
+        "text": "Hitta ett skydd eller uthus"
+      }
+    ]
+  },
+  {
+    "id": "m012",
+    "namn": "Skissernas Museum",
+    "typ": "Konstmuseum",
+    "kategori": "Konst",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=12",
+    "intro": "Ett besöksmål i Lund där du kan upptäcka konstmuseum och samla stjärnor i appen.",
+    "beskrivning": "Skissernas Museum är ett museum i Lund för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m012-u1",
+        "text": "Hitta ett konstverk som känns lugnt"
+      },
+      {
+        "id": "m012-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m012-u3",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m012-u4",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m012-u5",
+        "text": "Hitta ett verk som känns oväntat"
+      }
+    ]
+  },
+  {
+    "id": "m013",
+    "namn": "Historiska museet vid Lunds universitet",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=13",
+    "intro": "Ett besöksmål i Lund där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Historiska museet vid Lunds universitet är ett museum i Lund för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m013-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m013-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m013-u3",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m013-u4",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m013-u5",
+        "text": "Hitta en karta eller plats som nämns"
+      }
+    ]
+  },
+  {
+    "id": "m014",
+    "namn": "Medicinhistoriska museet",
+    "typ": "Specialmuseum",
+    "kategori": "Museum",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=14",
+    "intro": "Ett besöksmål i Lund där du kan upptäcka specialmuseum och samla stjärnor i appen.",
+    "beskrivning": "Medicinhistoriska museet är ett museum i Lund för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m014-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m014-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m014-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m014-u4",
+        "text": "Hitta något med spännande form"
+      },
+      {
+        "id": "m014-u5",
+        "text": "Hitta något med stark färg"
+      }
+    ]
+  },
+  {
+    "id": "m015",
+    "namn": "Universitetsmuseet Lund",
+    "typ": "Universitetsmuseum",
+    "kategori": "Museum",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=15",
+    "intro": "Ett besöksmål i Lund där du kan upptäcka universitetsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Universitetsmuseet Lund är ett museum i Lund för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m015-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m015-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m015-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m015-u4",
+        "text": "Hitta något med stark färg"
+      },
+      {
+        "id": "m015-u5",
+        "text": "Hitta något med spännande form"
+      }
+    ]
+  },
+  {
+    "id": "m016",
+    "namn": "Dunkers kulturhus",
+    "typ": "Kulturhus and utställningar",
+    "kategori": "Museum",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=16",
+    "intro": "Ett besöksmål i Helsingborg där du kan upptäcka kulturhus and utställningar och samla stjärnor i appen.",
+    "beskrivning": "Dunkers kulturhus är ett museum i Helsingborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m016-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m016-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m016-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m016-u4",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m016-u5",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      }
+    ]
+  },
+  {
+    "id": "m017",
+    "namn": "Fredriksdal museer and trädgårdar",
+    "typ": "Friluftsmuseum",
+    "kategori": "Museum",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=17",
+    "intro": "Ett besöksmål i Helsingborg där du kan upptäcka friluftsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Fredriksdal museer and trädgårdar är ett museum i Helsingborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m017-u1",
+        "text": "Hitta en äldre byggnad"
+      },
+      {
+        "id": "m017-u2",
+        "text": "Hitta ett hus av trä"
+      },
+      {
+        "id": "m017-u3",
+        "text": "Hitta en hantverksdetalj"
+      },
+      {
+        "id": "m017-u4",
+        "text": "Hitta ett odlings- eller trädgårdsområde"
+      },
+      {
+        "id": "m017-u5",
+        "text": "Hitta en plats med utsikt"
+      },
+      {
+        "id": "m017-u6",
+        "text": "Hitta ett historiskt bostadshus"
+      },
+      {
+        "id": "m017-u7",
+        "text": "Hitta ett skydd eller uthus"
+      }
+    ]
+  },
+  {
+    "id": "m018",
+    "namn": "Kärnan and Kärnanhuset",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=18",
+    "intro": "Ett besöksmål i Helsingborg där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Kärnan and Kärnanhuset är ett museum i Helsingborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m018-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m018-u2",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m018-u3",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m018-u4",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m018-u5",
+        "text": "Hitta något som är äldre än 100 år"
+      }
+    ]
+  },
+  {
+    "id": "m019",
+    "namn": "Teknikens and Sjöfartens hus (Helsingborg)",
+    "typ": "Teknikmuseum",
+    "kategori": "Museum",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=19",
+    "intro": "Ett besöksmål i Helsingborg där du kan upptäcka teknikmuseum och samla stjärnor i appen.",
+    "beskrivning": "Teknikens and Sjöfartens hus (Helsingborg) är ett museum i Helsingborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m019-u1",
+        "text": "Hitta en maskin eller teknisk modell"
+      },
+      {
+        "id": "m019-u2",
+        "text": "Hitta något som rör energi eller rörelse"
+      },
+      {
+        "id": "m019-u3",
+        "text": "Hitta en teknisk utveckling över tid"
+      },
+      {
+        "id": "m019-u4",
+        "text": "Hitta en knapp, spak eller ratt"
+      },
+      {
+        "id": "m019-u5",
+        "text": "Hitta något som rör sig eller blinkar"
+      }
+    ]
+  },
+  {
+    "id": "m020",
+    "namn": "Regionmuseet Kristianstad",
+    "typ": "Kulturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Kristianstad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=20",
+    "intro": "Ett besöksmål i Kristianstad där du kan upptäcka kulturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Regionmuseet Kristianstad är ett museum i Kristianstad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m020-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m020-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m020-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m020-u4",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      },
+      {
+        "id": "m020-u5",
+        "text": "Hitta något som är äldre än 100 år"
+      }
+    ]
+  },
+  {
+    "id": "m021",
+    "namn": "Kristianstads konsthall",
+    "typ": "Konsthall",
+    "kategori": "Konst",
+    "adress": "Kristianstad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=21",
+    "intro": "Ett besöksmål i Kristianstad där du kan upptäcka konsthall och samla stjärnor i appen.",
+    "beskrivning": "Kristianstads konsthall är ett museum i Kristianstad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m021-u1",
+        "text": "Hitta ett konstverk som känns lugnt"
+      },
+      {
+        "id": "m021-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m021-u3",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m021-u4",
+        "text": "Hitta ett verk du vill se igen"
+      },
+      {
+        "id": "m021-u5",
+        "text": "Hitta ett verk som känns oväntat"
+      }
+    ]
+  },
+  {
+    "id": "m022",
     "namn": "Ystads konstmuseum",
-    "typ": "Museum & konst",
-    "adress": "Sankta Maria kyrkoplan 1, 271 34 Ystad",
+    "typ": "Konstmuseum",
+    "kategori": "Konst",
+    "adress": "Ystad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=22",
+    "intro": "Ett besöksmål i Ystad där du kan upptäcka konstmuseum och samla stjärnor i appen.",
+    "beskrivning": "Ystads konstmuseum är ett museum i Ystad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m022-u1",
+        "text": "Hitta ett konstverk som känns lugnt"
+      },
+      {
+        "id": "m022-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m022-u3",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m022-u4",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m022-u5",
+        "text": "Hitta ett verk du vill se igen"
+      }
+    ]
+  },
+  {
+    "id": "m023",
+    "namn": "Klostret i Ystad",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Ystad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=23",
+    "intro": "Ett besöksmål i Ystad där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Klostret i Ystad är ett museum i Ystad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m023-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m023-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m023-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m023-u4",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m023-u5",
+        "text": "Hitta en person som nämns i en utställning"
+      }
+    ]
+  },
+  {
+    "id": "m024",
+    "namn": "Charlotta Berlins museum",
+    "typ": "Kulturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Ystad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=24",
+    "intro": "Ett besöksmål i Ystad där du kan upptäcka kulturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Charlotta Berlins museum är ett museum i Ystad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m024-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m024-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m024-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m024-u4",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      },
+      {
+        "id": "m024-u5",
+        "text": "Hitta ett föremål som är en kopia"
+      }
+    ]
+  },
+  {
+    "id": "m025",
+    "namn": "Ystads militärhistoriska museum",
+    "typ": "Militärmuseum",
+    "kategori": "Museum",
+    "adress": "Ystad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=25",
+    "intro": "Ett besöksmål i Ystad där du kan upptäcka militärmuseum och samla stjärnor i appen.",
+    "beskrivning": "Ystads militärhistoriska museum är ett museum i Ystad för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m025-u1",
+        "text": "Hitta en uniform"
+      },
+      {
+        "id": "m025-u2",
+        "text": "Hitta militär utrustning"
+      },
+      {
+        "id": "m025-u3",
+        "text": "Hitta ett kommunikationsföremål"
+      },
+      {
+        "id": "m025-u4",
+        "text": "Hitta en karta kopplad till militär historia"
+      },
+      {
+        "id": "m025-u5",
+        "text": "Hitta ett årtal kopplat till en konflikt"
+      }
+    ]
+  },
+  {
+    "id": "m026",
+    "namn": "Trelleborgs museum",
+    "typ": "Kulturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Trelleborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=26",
+    "intro": "Ett besöksmål i Trelleborg där du kan upptäcka kulturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Trelleborgs museum är ett museum i Trelleborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m026-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m026-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m026-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m026-u4",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m026-u5",
+        "text": "Hitta en person som nämns i en utställning"
+      }
+    ]
+  },
+  {
+    "id": "m027",
+    "namn": "Trelleborgen",
+    "typ": "Vikingamuseum",
+    "kategori": "Museum",
+    "adress": "Trelleborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=27",
+    "intro": "Ett besöksmål i Trelleborg där du kan upptäcka vikingamuseum och samla stjärnor i appen.",
+    "beskrivning": "Trelleborgen är ett museum i Trelleborg för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m027-u1",
+        "text": "Hitta ett föremål från vikingatid eller tidig medeltid"
+      },
+      {
+        "id": "m027-u2",
+        "text": "Hitta en runa eller symbol"
+      },
+      {
+        "id": "m027-u3",
+        "text": "Hitta något som visar handel eller resor"
+      },
+      {
+        "id": "m027-u4",
+        "text": "Hitta ett föremål som användes till mat"
+      },
+      {
+        "id": "m027-u5",
+        "text": "Hitta något som visar försvar"
+      }
+    ]
+  },
+  {
+    "id": "m028",
+    "namn": "Järnvägens museum",
+    "typ": "Järnvägsmuseum",
+    "kategori": "Museum",
+    "adress": "Ängelholm, Skåne",
+    "bild": "https://picsum.photos/800/500?random=28",
+    "intro": "Ett besöksmål i Ängelholm där du kan upptäcka järnvägsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Järnvägens museum är ett museum i Ängelholm för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m028-u1",
+        "text": "Hitta ett lok"
+      },
+      {
+        "id": "m028-u2",
+        "text": "Hitta en passagerarvagn"
+      },
+      {
+        "id": "m028-u3",
+        "text": "Hitta en stationsskylt eller signal"
+      },
+      {
+        "id": "m028-u4",
+        "text": "Hitta ett årtal kopplat till järnväg"
+      },
+      {
+        "id": "m028-u5",
+        "text": "Hitta en modelljärnväg"
+      }
+    ]
+  },
+  {
+    "id": "m029",
+    "namn": "Ängelholms flygmuseum",
+    "typ": "Flygmuseum",
+    "kategori": "Museum",
+    "adress": "Ängelholm, Skåne",
+    "bild": "https://picsum.photos/800/500?random=29",
+    "intro": "Ett besöksmål i Ängelholm där du kan upptäcka flygmuseum och samla stjärnor i appen.",
+    "beskrivning": "Ängelholms flygmuseum är ett museum i Ängelholm för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m029-u1",
+        "text": "Hitta ett flygplan eller flygfordon"
+      },
+      {
+        "id": "m029-u2",
+        "text": "Hitta ett instrument i en cockpit"
+      },
+      {
+        "id": "m029-u3",
+        "text": "Hitta en flygplansdel som sticker ut"
+      },
+      {
+        "id": "m029-u4",
+        "text": "Hitta ett flygplan med ovanlig form"
+      },
+      {
+        "id": "m029-u5",
+        "text": "Hitta ett årtal kopplat till flyg"
+      }
+    ]
+  },
+  {
+    "id": "m030",
+    "namn": "Ängelholms hembygdsmuseum (Hembygdsparken)",
+    "typ": "Hembygdsmuseum",
+    "kategori": "Museum",
+    "adress": "Ängelholm, Skåne",
+    "bild": "https://picsum.photos/800/500?random=30",
+    "intro": "Ett besöksmål i Ängelholm där du kan upptäcka hembygdsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Ängelholms hembygdsmuseum (Hembygdsparken) är ett museum i Ängelholm för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m030-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m030-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m030-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m030-u4",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m030-u5",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      }
+    ]
+  },
+  {
+    "id": "m031",
+    "namn": "Landskrona museum",
+    "typ": "Kulturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Landskrona, Skåne",
+    "bild": "https://picsum.photos/800/500?random=31",
+    "intro": "Ett besöksmål i Landskrona där du kan upptäcka kulturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Landskrona museum är ett museum i Landskrona för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m031-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m031-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m031-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m031-u4",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m031-u5",
+        "text": "Hitta ett föremål som är en kopia"
+      }
+    ]
+  },
+  {
+    "id": "m032",
+    "namn": "Pumphuset (konsthall)",
+    "typ": "Konsthall",
+    "kategori": "Konst",
+    "adress": "Landskrona, Skåne",
+    "bild": "https://picsum.photos/800/500?random=32",
+    "intro": "Ett besöksmål i Landskrona där du kan upptäcka konsthall och samla stjärnor i appen.",
+    "beskrivning": "Pumphuset (konsthall) är ett museum i Landskrona för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m032-u1",
+        "text": "Hitta ett konstverk som känns oväntat"
+      },
+      {
+        "id": "m032-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m032-u3",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m032-u4",
+        "text": "Hitta en tydlig form som återkommer"
+      },
+      {
+        "id": "m032-u5",
+        "text": "Hitta ett verk du vill se igen"
+      }
+    ]
+  },
+  {
+    "id": "m033",
+    "namn": "Citadellet (Landskrona)",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Landskrona, Skåne",
+    "bild": "https://picsum.photos/800/500?random=33",
+    "intro": "Ett besöksmål i Landskrona där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Citadellet (Landskrona) är ett museum i Landskrona för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m033-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m033-u2",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m033-u3",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m033-u4",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m033-u5",
+        "text": "Hitta ett föremål som är en kopia"
+      }
+    ]
+  },
+  {
+    "id": "m034",
+    "namn": "Eslövs Leksaksmuseum",
+    "typ": "Leksaksmuseum",
+    "kategori": "Barn",
+    "adress": "Kvarngatan 25, 241 38 Eslöv",
+    "bild": "https://picsum.photos/800/500?random=34",
+    "intro": "Ett besöksmål i Eslöv där du kan upptäcka leksaksmuseum och samla stjärnor i appen.",
+    "beskrivning": "Eslövs Leksaksmuseum är ett museum i Eslöv för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m034-u1",
+        "text": "Hitta en leksak du minns från barndomen"
+      },
+      {
+        "id": "m034-u2",
+        "text": "Hitta en byggleksak med många detaljer"
+      },
+      {
+        "id": "m034-u3",
+        "text": "Hitta en figur från film eller TV"
+      },
+      {
+        "id": "m034-u4",
+        "text": "Hitta en modellvärld eller modellbana"
+      },
+      {
+        "id": "m034-u5",
+        "text": "Hitta en leksak som känns väldigt gammal"
+      }
+    ]
+  },
+  {
+    "id": "m035",
+    "namn": "Autoseum",
+    "typ": "Fordonsmuseum",
+    "kategori": "Museum",
+    "adress": "Simrishamn, Skåne",
+    "bild": "https://picsum.photos/800/500?random=35",
+    "intro": "Ett besöksmål i Simrishamn där du kan upptäcka fordonsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Autoseum är ett museum i Simrishamn för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m035-u1",
+        "text": "Hitta en maskin eller teknisk modell"
+      },
+      {
+        "id": "m035-u2",
+        "text": "Hitta en teknisk utveckling över tid"
+      },
+      {
+        "id": "m035-u3",
+        "text": "Hitta en knapp, spak eller ratt"
+      },
+      {
+        "id": "m035-u4",
+        "text": "Hitta något som rör energi eller rörelse"
+      },
+      {
+        "id": "m035-u5",
+        "text": "Hitta något som rör sig eller blinkar"
+      }
+    ]
+  },
+  {
+    "id": "m036",
+    "namn": "Österlens museum",
+    "typ": "Kulturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Simrishamn, Skåne",
     "bild": "https://picsum.photos/800/500?random=36",
-    "intro": "Konstsamling med fokus på skånsk och nordisk konst.",
+    "intro": "Ett besöksmål i Simrishamn där du kan upptäcka kulturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Österlens museum är ett museum i Simrishamn för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
     "utmaningar": [
-      { "id": "s36-u1", "text": "Hitta ett målning du gillar" },
-      { "id": "s36-u2", "text": "Stå tyst framför ett konstverk" }
+      {
+        "id": "m036-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m036-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m036-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m036-u4",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m036-u5",
+        "text": "Hitta något som är äldre än 100 år"
+      }
     ]
   },
   {
-    "id": "s37",
-    "namn": "Fredriksdal museer och trädgårdar",
-    "typ": "Museum & friluftsmuseum",
-    "adress": "Gustav Adolfs väg 24, 254 42 Helsingborg",
+    "id": "m037",
+    "namn": "Glimmingehus",
+    "typ": "Borg and museum",
+    "kategori": "Historia",
+    "adress": "Simrishamn, Skåne",
     "bild": "https://picsum.photos/800/500?random=37",
-    "intro": "Friluftsmuseum med historiska byggnader och stora trädgårdar.",
+    "intro": "Ett besöksmål i Simrishamn där du kan upptäcka borg and museum och samla stjärnor i appen.",
+    "beskrivning": "Glimmingehus är ett museum i Simrishamn för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
     "utmaningar": [
-      { "id": "s37-u1", "text": "Gå in i en gammal gård" },
-      { "id": "s37-u2", "text": "Hitta en djurhage" },
-      { "id": "s37-u3", "text": "Lukta på en växt" }
+      {
+        "id": "m037-u1",
+        "text": "Hitta ett torn"
+      },
+      {
+        "id": "m037-u2",
+        "text": "Hitta en mur eller vall"
+      },
+      {
+        "id": "m037-u3",
+        "text": "Hitta ett gammalt fönster"
+      },
+      {
+        "id": "m037-u4",
+        "text": "Hitta en innergård"
+      },
+      {
+        "id": "m037-u5",
+        "text": "Hitta ett årtal kopplat till byggnaden"
+      }
     ]
   },
   {
-    "id": "s38",
-    "namn": "Lunds universitets historiska museum",
-    "typ": "Museum & vetenskap",
-    "adress": "Helgonavägen 3, 223 62 Lund",
+    "id": "m038",
+    "namn": "Museum of Ancient Seas (Hammenhög)",
+    "typ": "Naturhistoriskt museum",
+    "kategori": "Historia",
+    "adress": "Hammenhög, Skåne",
     "bild": "https://picsum.photos/800/500?random=38",
-    "intro": "Samlingar från arkeologi, zoologi och historia vid universitetet.",
+    "intro": "Ett besöksmål i Hammenhög där du kan upptäcka naturhistoriskt museum och samla stjärnor i appen.",
+    "beskrivning": "Museum of Ancient Seas (Hammenhög) är ett museum i Hammenhög för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
     "utmaningar": [
-      { "id": "s38-u1", "text": "Hitta ett gammalt fossil" },
-      { "id": "s38-u2", "text": "Läs om ett djur från förr" }
+      {
+        "id": "m038-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m038-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m038-u3",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m038-u4",
+        "text": "Hitta något med spännande form"
+      },
+      {
+        "id": "m038-u5",
+        "text": "Hitta din favoritdel"
+      }
+    ]
+  },
+  {
+    "id": "m039",
+    "namn": "Wanås Konst",
+    "typ": "Konstpark and museum",
+    "kategori": "Konst",
+    "adress": "Knislinge, Skåne",
+    "bild": "https://picsum.photos/800/500?random=39",
+    "intro": "Ett besöksmål i Knislinge där du kan upptäcka konstpark and museum och samla stjärnor i appen.",
+    "beskrivning": "Wanås Konst är ett museum i Knislinge för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m039-u1",
+        "text": "Hitta ett konstverk som känns oväntat"
+      },
+      {
+        "id": "m039-u2",
+        "text": "Hitta ett konstverk med starka färger"
+      },
+      {
+        "id": "m039-u3",
+        "text": "Titta på ett verk i 60 sekunder"
+      },
+      {
+        "id": "m039-u4",
+        "text": "Hitta ett verk som förändras när du går nära"
+      },
+      {
+        "id": "m039-u5",
+        "text": "Hitta ett verk du vill se igen"
+      }
+    ]
+  },
+  {
+    "id": "m040",
+    "namn": "Broby hembygdsmuseum",
+    "typ": "Hembygdsmuseum",
+    "kategori": "Museum",
+    "adress": "Broby, Skåne",
+    "bild": "https://picsum.photos/800/500?random=40",
+    "intro": "Ett besöksmål i Broby där du kan upptäcka hembygdsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Broby hembygdsmuseum är ett museum i Broby för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m040-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m040-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m040-u3",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m040-u4",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m040-u5",
+        "text": "Hitta ett föremål som fortfarande används i dag"
+      }
+    ]
+  },
+  {
+    "id": "m041",
+    "namn": "Fotevikens museum",
+    "typ": "Vikingamuseum",
+    "kategori": "Museum",
+    "adress": "Höllviken, Skåne",
+    "bild": "https://picsum.photos/800/500?random=41",
+    "intro": "Ett besöksmål i Höllviken där du kan upptäcka vikingamuseum och samla stjärnor i appen.",
+    "beskrivning": "Fotevikens museum är ett museum i Höllviken för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m041-u1",
+        "text": "Hitta en runa eller symbol"
+      },
+      {
+        "id": "m041-u2",
+        "text": "Hitta något som visar handel eller resor"
+      },
+      {
+        "id": "m041-u3",
+        "text": "Hitta något som visar försvar"
+      },
+      {
+        "id": "m041-u4",
+        "text": "Hitta ett föremål av trä eller metall"
+      },
+      {
+        "id": "m041-u5",
+        "text": "Hitta ett föremål från vikingatid eller tidig medeltid"
+      }
+    ]
+  },
+  {
+    "id": "m042",
+    "namn": "Bosjökloster museum",
+    "typ": "Kulturhistoria",
+    "kategori": "Museum",
+    "adress": "Höör, Skåne",
+    "bild": "https://picsum.photos/800/500?random=42",
+    "intro": "Ett besöksmål i Höör där du kan upptäcka kulturhistoria och samla stjärnor i appen.",
+    "beskrivning": "Bosjökloster museum är ett museum i Höör för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m042-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m042-u2",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m042-u3",
+        "text": "Hitta något som är äldre än 100 år"
+      },
+      {
+        "id": "m042-u4",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m042-u5",
+        "text": "Hitta en person som nämns i en utställning"
+      }
+    ]
+  },
+  {
+    "id": "m043",
+    "namn": "Tyringe kurortsmuseum",
+    "typ": "Specialmuseum",
+    "kategori": "Museum",
+    "adress": "Tyringe, Skåne",
+    "bild": "https://picsum.photos/800/500?random=43",
+    "intro": "Ett besöksmål i Tyringe där du kan upptäcka specialmuseum och samla stjärnor i appen.",
+    "beskrivning": "Tyringe kurortsmuseum är ett museum i Tyringe för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m043-u1",
+        "text": "Hitta ett föremål som fångar din uppmärksamhet"
+      },
+      {
+        "id": "m043-u2",
+        "text": "Hitta något du inte sett förut"
+      },
+      {
+        "id": "m043-u3",
+        "text": "Hitta din favoritdel"
+      },
+      {
+        "id": "m043-u4",
+        "text": "Hitta något med stark färg"
+      },
+      {
+        "id": "m043-u5",
+        "text": "Hitta något med spännande form"
+      }
+    ]
+  },
+  {
+    "id": "m044",
+    "namn": "Skånska Järnvägar",
+    "typ": "Järnvägsmuseum",
+    "kategori": "Museum",
+    "adress": "Brösarp, Skåne",
+    "bild": "https://picsum.photos/800/500?random=44",
+    "intro": "Ett besöksmål i Brösarp där du kan upptäcka järnvägsmuseum och samla stjärnor i appen.",
+    "beskrivning": "Skånska Järnvägar är ett museum i Brösarp för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m044-u1",
+        "text": "Hitta ett lok"
+      },
+      {
+        "id": "m044-u2",
+        "text": "Hitta en passagerarvagn"
+      },
+      {
+        "id": "m044-u3",
+        "text": "Hitta en stationsskylt eller signal"
+      },
+      {
+        "id": "m044-u4",
+        "text": "Hitta ett årtal kopplat till järnväg"
+      },
+      {
+        "id": "m044-u5",
+        "text": "Hitta en modelljärnväg"
+      }
+    ]
+  },
+  {
+    "id": "m045",
+    "namn": "Ångtåget på Österlen",
+    "typ": "Järnvägsupplevelse and museum",
+    "kategori": "Museum",
+    "adress": "Brösarp, Skåne",
+    "bild": "https://picsum.photos/800/500?random=45",
+    "intro": "Ett besöksmål i Brösarp där du kan upptäcka järnvägsupplevelse and museum och samla stjärnor i appen.",
+    "beskrivning": "Ångtåget på Österlen är ett museum i Brösarp för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m045-u1",
+        "text": "Hitta ett lok"
+      },
+      {
+        "id": "m045-u2",
+        "text": "Hitta en passagerarvagn"
+      },
+      {
+        "id": "m045-u3",
+        "text": "Hitta en stationsskylt eller signal"
+      },
+      {
+        "id": "m045-u4",
+        "text": "Hitta ett årtal kopplat till järnväg"
+      },
+      {
+        "id": "m045-u5",
+        "text": "Hitta en karta över spår eller linjer"
+      }
+    ]
+  },
+  {
+    "id": "m046",
+    "namn": "Per Albin-museet (Tågarp)",
+    "typ": "Historiskt museum",
+    "kategori": "Historia",
+    "adress": "Tågarp, Skåne",
+    "bild": "https://picsum.photos/800/500?random=46",
+    "intro": "Ett besöksmål i Tågarp där du kan upptäcka historiskt museum och samla stjärnor i appen.",
+    "beskrivning": "Per Albin-museet (Tågarp) är ett museum i Tågarp för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m046-u1",
+        "text": "Hitta ett tydligt årtal"
+      },
+      {
+        "id": "m046-u2",
+        "text": "Hitta en person som nämns i en utställning"
+      },
+      {
+        "id": "m046-u3",
+        "text": "Hitta en karta eller plats som nämns"
+      },
+      {
+        "id": "m046-u4",
+        "text": "Hitta ett föremål från vardagslivet"
+      },
+      {
+        "id": "m046-u5",
+        "text": "Hitta ett föremål som är en kopia"
+      }
+    ]
+  },
+  {
+    "id": "m047",
+    "namn": "BRIO Lekoseum",
+    "typ": "Leksaksmuseum",
+    "kategori": "Barn",
+    "adress": "BRIOgatan 1, 283 31 Osby",
+    "bild": "https://picsum.photos/800/500?random=47",
+    "intro": "Ett besöksmål i Osby där du kan upptäcka leksaksmuseum och samla stjärnor i appen.",
+    "beskrivning": "BRIO Lekoseum är ett museum i Osby för nyfikna besökare. Gå runt i din egen takt, upptäck detaljer, jämför saker och hitta favoriter. Utmaningarna är gjorda för att kännas som små mini-uppdrag på plats – utan att du behöver skriva ner något.",
+    "utmaningar": [
+      {
+        "id": "m047-u1",
+        "text": "Hitta en leksak du minns från barndomen"
+      },
+      {
+        "id": "m047-u2",
+        "text": "Hitta en byggleksak med många detaljer"
+      },
+      {
+        "id": "m047-u3",
+        "text": "Hitta en figur från film eller TV"
+      },
+      {
+        "id": "m047-u4",
+        "text": "Hitta en leksak i trä"
+      },
+      {
+        "id": "m047-u5",
+        "text": "Hitta en modellvärld eller modellbana"
+      }
+    ]
+  },
+  {
+    "id": "n001",
+    "namn": "Söderåsens nationalpark",
+    "typ": "Nationalpark",
+    "kategori": "Natur",
+    "adress": "Röstånga, Skåne",
+    "bild": "https://picsum.photos/800/500?random=701",
+    "intro": "Nationalpark med naturstigar och tydliga utsiktsplatser.",
+    "beskrivning": "Söderåsens nationalpark är ett stort skogsområde med kuperad terräng, raviner och utsiktsplatser.",
+    "utmaningar": [
+      {
+        "id": "n001-u1",
+        "text": "Hitta en plats med stenig mark vid Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u2",
+        "text": "Hitta en ravin eller sänka vid Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u3",
+        "text": "Hitta en plats med bokskog vid Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u4",
+        "text": "Hitta en glänta vid Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u5",
+        "text": "Hitta en utsiktspunkt vid Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u6",
+        "text": "Hitta en skylt vid entrén till Söderåsens nationalpark"
+      },
+      {
+        "id": "n001-u7",
+        "text": "Hitta en stig som går uppför vid Söderåsens nationalpark"
+      }
+    ]
+  },
+  {
+    "id": "n002",
+    "namn": "Stenshuvuds nationalpark",
+    "typ": "Nationalpark",
+    "kategori": "Natur",
+    "adress": "Kivik, Skåne",
+    "bild": "https://picsum.photos/800/500?random=702",
+    "intro": "Nationalpark med naturstigar och tydliga utsiktsplatser.",
+    "beskrivning": "Stenshuvuds nationalpark är ett kustnära naturområde på Österlen där skog, strand och utsikt möts.",
+    "utmaningar": [
+      {
+        "id": "n002-u1",
+        "text": "Hitta en stig som går uppför vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u2",
+        "text": "Hitta en plats med bokskog vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u3",
+        "text": "Hitta en plats med stenig mark vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u4",
+        "text": "Hitta en ravin eller sänka vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u5",
+        "text": "Hitta en glänta vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u6",
+        "text": "Hitta en utsiktspunkt vid Stenshuvuds nationalpark"
+      },
+      {
+        "id": "n002-u7",
+        "text": "Hitta en skylt vid entrén till Stenshuvuds nationalpark"
+      }
+    ]
+  },
+  {
+    "id": "n003",
+    "namn": "Dalby Söderskog nationalpark",
+    "typ": "Nationalpark",
+    "kategori": "Natur",
+    "adress": "Dalby, Skåne",
+    "bild": "https://picsum.photos/800/500?random=703",
+    "intro": "Nationalpark med naturstigar och tydliga utsiktsplatser.",
+    "beskrivning": "Dalby Söderskog nationalpark är en liten lövskogsmiljö nära Dalby med markerade stigar och tydlig vårblomning.",
+    "utmaningar": [
+      {
+        "id": "n003-u1",
+        "text": "Hitta en plats med bokskog vid Dalby Söderskog nationalpark"
+      },
+      {
+        "id": "n003-u2",
+        "text": "Hitta en plats med stenig mark vid Dalby Söderskog nationalpark"
+      },
+      {
+        "id": "n003-u3",
+        "text": "Hitta en stig som går uppför vid Dalby Söderskog nationalpark"
+      },
+      {
+        "id": "n003-u4",
+        "text": "Hitta en glänta vid Dalby Söderskog nationalpark"
+      },
+      {
+        "id": "n003-u5",
+        "text": "Hitta en utsiktspunkt vid Dalby Söderskog nationalpark"
+      }
+    ]
+  },
+  {
+    "id": "n004",
+    "namn": "Kullabergs naturreservat",
+    "typ": "Naturreservat",
+    "kategori": "Natur",
+    "adress": "Mölle, Skåne",
+    "bild": "https://picsum.photos/800/500?random=704",
+    "intro": "Skyddat naturområde med stigar och utsiktspunkter.",
+    "beskrivning": "Kullabergs naturreservat är ett dramatiskt kustområde med klippor, vandringsstigar och vid utsikt över havet.",
+    "utmaningar": [
+      {
+        "id": "n004-u1",
+        "text": "Hitta en höjdpunkt med utsikt vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u2",
+        "text": "Hitta en stig med stenigt underlag vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u3",
+        "text": "Hitta en plats där havet syns vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u4",
+        "text": "Hitta en tydlig områdesskylt vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u5",
+        "text": "Hitta en vindutsatt plats vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u6",
+        "text": "Hitta en plats med skogskant vid Kullabergs naturreservat"
+      },
+      {
+        "id": "n004-u7",
+        "text": "Hitta en klippa eller stor sten vid Kullabergs naturreservat"
+      }
+    ]
+  },
+  {
+    "id": "n005",
+    "namn": "Måkläppen naturreservat",
+    "typ": "Naturreservat",
+    "kategori": "Natur",
+    "adress": "Falsterbonäset, Skåne",
+    "bild": "https://picsum.photos/800/500?random=705",
+    "intro": "Skyddat naturområde med stigar och utsiktspunkter.",
+    "beskrivning": "Måkläppen naturreservat ligger längst ut på Falsterbonäset och är ett känt område för sandrevlar, fågelliv och kustnatur.",
+    "utmaningar": [
+      {
+        "id": "n005-u1",
+        "text": "Hitta en tydlig områdesskylt vid Måkläppen naturreservat"
+      },
+      {
+        "id": "n005-u2",
+        "text": "Hitta en plats där havet syns vid Måkläppen naturreservat"
+      },
+      {
+        "id": "n005-u3",
+        "text": "Hitta en klippa eller stor sten vid Måkläppen naturreservat"
+      },
+      {
+        "id": "n005-u4",
+        "text": "Hitta en plats med skogskant vid Måkläppen naturreservat"
+      },
+      {
+        "id": "n005-u5",
+        "text": "Hitta en vindutsatt plats vid Måkläppen naturreservat"
+      }
+    ]
+  },
+  {
+    "id": "n006",
+    "namn": "Kristianstads Vattenrike",
+    "typ": "Natur- och våtmarksområde",
+    "kategori": "Natur",
+    "adress": "Kristianstad, Skåne",
+    "bild": "https://picsum.photos/800/500?random=706",
+    "intro": "Våtmarksmiljö med vatten, spänger och fågelliv.",
+    "beskrivning": "Kristianstads Vattenrike är ett våtmarkslandskap med spänger, besöksplatser och utsikt över vattennära natur.",
+    "utmaningar": [
+      {
+        "id": "n006-u1",
+        "text": "Hitta ett fågeltorn vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u2",
+        "text": "Hitta en spång eller gångbro vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u3",
+        "text": "Hitta en öppen våtmark vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u4",
+        "text": "Hitta en gräns mellan land och vatten vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u5",
+        "text": "Hitta ett område med högt gräs vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u6",
+        "text": "Hitta en stilla vik vid Kristianstads Vattenrike"
+      },
+      {
+        "id": "n006-u7",
+        "text": "Hitta en plats där vattnet speglar himlen vid Kristianstads Vattenrike"
+      }
+    ]
+  },
+  {
+    "id": "n007",
+    "namn": "Hovs Hallar",
+    "typ": "Kustlandskap",
+    "kategori": "Strand",
+    "adress": "Bjärehalvön, Skåne",
+    "bild": "https://picsum.photos/800/500?random=707",
+    "intro": "Kustnatur med klippor, hav och utsikt.",
+    "beskrivning": "Hovs Hallar är en karg kuststräcka med klippor, stenstrand och öppna vyer mot havet.",
+    "utmaningar": [
+      {
+        "id": "n007-u1",
+        "text": "Hitta en stig nära vattnet vid Hovs Hallar"
+      },
+      {
+        "id": "n007-u2",
+        "text": "Hitta en klippformation med sprickor vid Hovs Hallar"
+      },
+      {
+        "id": "n007-u3",
+        "text": "Hitta en utsikt med fri horisont vid Hovs Hallar"
+      },
+      {
+        "id": "n007-u4",
+        "text": "Hitta en sten som är rundad av havet vid Hovs Hallar"
+      },
+      {
+        "id": "n007-u5",
+        "text": "Hitta en plats där vinden är stark vid Hovs Hallar"
+      }
+    ]
+  },
+  {
+    "id": "n008",
+    "namn": "Immeln",
+    "typ": "Sjöområde",
+    "kategori": "Utflykt",
+    "adress": "Immeln, Skåne",
+    "bild": "https://picsum.photos/800/500?random=708",
+    "intro": "Sjömiljö med strand och utsikt över vatten.",
+    "beskrivning": "Immeln är ett sjöområde med skogsnära stränder och lugna vikar.",
+    "utmaningar": [
+      {
+        "id": "n008-u1",
+        "text": "Hitta en vik med lugn yta vid Immeln"
+      },
+      {
+        "id": "n008-u2",
+        "text": "Hitta en plats med stilla vatten vid Immeln"
+      },
+      {
+        "id": "n008-u3",
+        "text": "Hitta en plats med fågelljud vid Immeln"
+      },
+      {
+        "id": "n008-u4",
+        "text": "Hitta en brygga eller strandkant vid Immeln"
+      },
+      {
+        "id": "n008-u5",
+        "text": "Hitta en plats där du ser långt över vattenytan vid Immeln"
+      }
+    ]
+  },
+  {
+    "id": "n009",
+    "namn": "Ivösjön",
+    "typ": "Sjöområde",
+    "kategori": "Utflykt",
+    "adress": "Bromölla, Skåne",
+    "bild": "https://picsum.photos/800/500?random=709",
+    "intro": "Sjömiljö med strand och utsikt över vatten.",
+    "beskrivning": "Ivösjön är en stor sjö i nordöstra Skåne med strandmiljöer och utsikt över öppet vatten.",
+    "utmaningar": [
+      {
+        "id": "n009-u1",
+        "text": "Hitta en sten vid strandkanten vid Ivösjön"
+      },
+      {
+        "id": "n009-u2",
+        "text": "Hitta en vik med lugn yta vid Ivösjön"
+      },
+      {
+        "id": "n009-u3",
+        "text": "Hitta en plats med fågelljud vid Ivösjön"
+      },
+      {
+        "id": "n009-u4",
+        "text": "Hitta en skogsnära strand vid Ivösjön"
+      },
+      {
+        "id": "n009-u5",
+        "text": "Hitta en plats med stilla vatten vid Ivösjön"
+      }
+    ]
+  },
+  {
+    "id": "n010",
+    "namn": "Brösarps backar",
+    "typ": "Naturreservat",
+    "kategori": "Natur",
+    "adress": "Brösarp, Skåne",
+    "bild": "https://picsum.photos/800/500?random=710",
+    "intro": "Skyddat naturområde med stigar och utsiktspunkter.",
+    "beskrivning": "Brösarps backar är ett böljande backlandskap i sydöstra Skåne med öppna vyer och markerade stigar.",
+    "utmaningar": [
+      {
+        "id": "n010-u1",
+        "text": "Hitta en vindutsatt plats vid Brösarps backar"
+      },
+      {
+        "id": "n010-u2",
+        "text": "Hitta en stig med stenigt underlag vid Brösarps backar"
+      },
+      {
+        "id": "n010-u3",
+        "text": "Hitta en tydlig områdesskylt vid Brösarps backar"
+      },
+      {
+        "id": "n010-u4",
+        "text": "Hitta en höjdpunkt med utsikt vid Brösarps backar"
+      },
+      {
+        "id": "n010-u5",
+        "text": "Hitta en klippa eller stor sten vid Brösarps backar"
+      },
+      {
+        "id": "n010-u6",
+        "text": "Hitta en plats där havet syns vid Brösarps backar"
+      },
+      {
+        "id": "n010-u7",
+        "text": "Hitta en plats med skogskant vid Brösarps backar"
+      }
+    ]
+  },
+  {
+    "id": "n011",
+    "namn": "Ribersborgsstranden",
+    "typ": "Strand",
+    "kategori": "Strand",
+    "adress": "Malmö, Skåne",
+    "bild": "https://picsum.photos/800/500?random=711",
+    "intro": "Strand för bad och promenad.",
+    "beskrivning": "Ribersborgsstranden är Malmös stadsstrand med lång strandlinje och utsikt över Öresund.",
+    "utmaningar": [
+      {
+        "id": "n011-u1",
+        "text": "Hitta en plats där stranden är extra bred vid Ribersborgsstranden"
+      },
+      {
+        "id": "n011-u2",
+        "text": "Hitta en sanddyn vid Ribersborgsstranden"
+      },
+      {
+        "id": "n011-u3",
+        "text": "Hitta en plats där vattnet är långgrunt vid Ribersborgsstranden"
+      },
+      {
+        "id": "n011-u4",
+        "text": "Hitta en plats med fri sikt mot horisonten vid Ribersborgsstranden"
+      },
+      {
+        "id": "n011-u5",
+        "text": "Hitta ett område med mjuk sand vid Ribersborgsstranden"
+      }
+    ]
+  },
+  {
+    "id": "n012",
+    "namn": "Skanör-Falsterbo strand",
+    "typ": "Strand",
+    "kategori": "Strand",
+    "adress": "Skanör-Falsterbo, Skåne",
+    "bild": "https://picsum.photos/800/500?random=712",
+    "intro": "Strand för bad och promenad.",
+    "beskrivning": "Skanör-Falsterbo strand är en lång sandstrand med dyner och öppet kustlandskap.",
+    "utmaningar": [
+      {
+        "id": "n012-u1",
+        "text": "Hitta ett område med vindskydd vid Skanör-Falsterbo strand"
+      },
+      {
+        "id": "n012-u2",
+        "text": "Hitta en plats där stranden är extra bred vid Skanör-Falsterbo strand"
+      },
+      {
+        "id": "n012-u3",
+        "text": "Hitta en plats med fri sikt mot horisonten vid Skanör-Falsterbo strand"
+      },
+      {
+        "id": "n012-u4",
+        "text": "Hitta en plats där vattnet är långgrunt vid Skanör-Falsterbo strand"
+      },
+      {
+        "id": "n012-u5",
+        "text": "Hitta ett område med mjuk sand vid Skanör-Falsterbo strand"
+      }
+    ]
+  },
+  {
+    "id": "n013",
+    "namn": "Sandhammaren",
+    "typ": "Strand",
+    "kategori": "Strand",
+    "adress": "Löderup, Skåne",
+    "bild": "https://picsum.photos/800/500?random=713",
+    "intro": "Strand för bad och promenad.",
+    "beskrivning": "Sandhammaren är en bred sandstrand på Österlen med sanddyner och natur i direkt anslutning.",
+    "utmaningar": [
+      {
+        "id": "n013-u1",
+        "text": "Hitta en sanddyn vid Sandhammaren"
+      },
+      {
+        "id": "n013-u2",
+        "text": "Hitta en plats där stranden är extra bred vid Sandhammaren"
+      },
+      {
+        "id": "n013-u3",
+        "text": "Hitta en plats där vattnet är långgrunt vid Sandhammaren"
+      },
+      {
+        "id": "n013-u4",
+        "text": "Hitta en kant mellan sand och växtlighet vid Sandhammaren"
+      },
+      {
+        "id": "n013-u5",
+        "text": "Hitta en plats med fri sikt mot horisonten vid Sandhammaren"
+      }
+    ]
+  },
+  {
+    "id": "n014",
+    "namn": "Mälarhusen strand",
+    "typ": "Strand",
+    "kategori": "Strand",
+    "adress": "Skillinge-Löderup, Skåne",
+    "bild": "https://picsum.photos/800/500?random=714",
+    "intro": "Strand för bad och promenad.",
+    "beskrivning": "Mälarhusen strand är en lång kuststräcka med sand, dyner och öppna vyer.",
+    "utmaningar": [
+      {
+        "id": "n014-u1",
+        "text": "Hitta ett område med vindskydd vid Mälarhusen strand"
+      },
+      {
+        "id": "n014-u2",
+        "text": "Hitta en plats där vattnet är långgrunt vid Mälarhusen strand"
+      },
+      {
+        "id": "n014-u3",
+        "text": "Hitta ett område med mjuk sand vid Mälarhusen strand"
+      },
+      {
+        "id": "n014-u4",
+        "text": "Hitta en sanddyn vid Mälarhusen strand"
+      },
+      {
+        "id": "n014-u5",
+        "text": "Hitta en kant mellan sand och växtlighet vid Mälarhusen strand"
+      }
+    ]
+  },
+  {
+    "id": "n015",
+    "namn": "Täppet strand",
+    "typ": "Strand",
+    "kategori": "Strand",
+    "adress": "Åhus, Skåne",
+    "bild": "https://picsum.photos/800/500?random=715",
+    "intro": "Strand för bad och promenad.",
+    "beskrivning": "Täppet strand i Åhus är en långgrund sandstrand med typisk badmiljö.",
+    "utmaningar": [
+      {
+        "id": "n015-u1",
+        "text": "Hitta en plats där vattnet är långgrunt vid Täppet strand"
+      },
+      {
+        "id": "n015-u2",
+        "text": "Hitta en plats med fri sikt mot horisonten vid Täppet strand"
+      },
+      {
+        "id": "n015-u3",
+        "text": "Hitta ett område med vindskydd vid Täppet strand"
+      },
+      {
+        "id": "n015-u4",
+        "text": "Hitta ett område med mjuk sand vid Täppet strand"
+      },
+      {
+        "id": "n015-u5",
+        "text": "Hitta en sanddyn vid Täppet strand"
+      }
+    ]
+  },
+  {
+    "id": "n016",
+    "namn": "Ales stenar",
+    "typ": "Fornlämning",
+    "kategori": "Historia",
+    "adress": "Kåseberga, Skåne",
+    "bild": "https://picsum.photos/800/500?random=716",
+    "intro": "Historisk fornlämning i landskapet.",
+    "beskrivning": "Ales stenar är en stor skeppssättning av sten på en höjd ovanför Kåseberga med utsikt mot havet.",
+    "utmaningar": [
+      {
+        "id": "n016-u1",
+        "text": "Hitta en plats där du ser havet från höjd vid Ales stenar"
+      },
+      {
+        "id": "n016-u2",
+        "text": "Hitta en plats där horisonten syns tydligt vid Ales stenar"
+      },
+      {
+        "id": "n016-u3",
+        "text": "Hitta en stig som leder upp mot Ales stenar"
+      },
+      {
+        "id": "n016-u4",
+        "text": "Hitta en utsiktspunkt vid Ales stenar"
+      },
+      {
+        "id": "n016-u5",
+        "text": "Hitta en informationsskylt vid Ales stenar"
+      }
+    ]
+  },
+  {
+    "id": "n017",
+    "namn": "Lunds domkyrka",
+    "typ": "Historisk sevärdhet",
+    "kategori": "Historia",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=717",
+    "intro": "Historisk plats med tydlig arkitektur.",
+    "beskrivning": "Lunds domkyrka är en stor historisk kyrka i centrala Lund och ett av stadens tydligaste landmärken.",
+    "utmaningar": [
+      {
+        "id": "n017-u1",
+        "text": "Hitta ett torn som syns tydligt vid Lunds domkyrka"
+      },
+      {
+        "id": "n017-u2",
+        "text": "Hitta en detalj i sten med mönster vid Lunds domkyrka"
+      },
+      {
+        "id": "n017-u3",
+        "text": "Hitta en stenfasad med grov struktur vid Lunds domkyrka"
+      },
+      {
+        "id": "n017-u4",
+        "text": "Hitta ett fönster med färgat glas vid Lunds domkyrka"
+      },
+      {
+        "id": "n017-u5",
+        "text": "Hitta ett valv eller båge vid Lunds domkyrka"
+      }
+    ]
+  },
+  {
+    "id": "n018",
+    "namn": "Turning Torso",
+    "typ": "Landmärke",
+    "kategori": "Utflykt",
+    "adress": "Malmö, Skåne",
+    "bild": "https://picsum.photos/800/500?random=718",
+    "intro": "Känt landmärke och utsiktspunkt i staden.",
+    "beskrivning": "Turning Torso är en högt vriden skyskrapa i Malmö och ett tydligt landmärke vid kusten.",
+    "utmaningar": [
+      {
+        "id": "n018-u1",
+        "text": "Hitta en plats där toppen av Turning Torso syns"
+      },
+      {
+        "id": "n018-u2",
+        "text": "Hitta en reflektionsyta nära Turning Torso"
+      },
+      {
+        "id": "n018-u3",
+        "text": "Hitta en plats med fri himmel bakom Turning Torso"
+      },
+      {
+        "id": "n018-u4",
+        "text": "Hitta en plats där Turning Torso syns över taklinjen"
+      },
+      {
+        "id": "n018-u5",
+        "text": "Hitta en plats där hela Turning Torso syns"
+      }
+    ]
+  },
+  {
+    "id": "n019",
+    "namn": "Ven",
+    "typ": "Ö och cykelutflykt",
+    "kategori": "Utflykt",
+    "adress": "Landskrona, Skåne",
+    "bild": "https://picsum.photos/800/500?random=719",
+    "intro": "Öutflykt som passar för cykelrunda.",
+    "beskrivning": "Ven är en ö i Öresund känd för cykelvänliga vägar, öppna fält och utsikt mot sundet.",
+    "utmaningar": [
+      {
+        "id": "n019-u1",
+        "text": "Hitta en utsikt där du ser havet från höjd på Ven"
+      },
+      {
+        "id": "n019-u2",
+        "text": "Hitta en väg med lä bakom vegetation på Ven"
+      },
+      {
+        "id": "n019-u3",
+        "text": "Hitta en skylt med ortnamn på Ven"
+      },
+      {
+        "id": "n019-u4",
+        "text": "Hitta en plats med öppna fält på Ven"
+      },
+      {
+        "id": "n019-u5",
+        "text": "Hitta en utsikt mot sundet på Ven"
+      },
+      {
+        "id": "n019-u6",
+        "text": "Hitta en backe som känns brant på Ven"
+      },
+      {
+        "id": "n019-u7",
+        "text": "Hitta en smal landsväg på Ven"
+      }
+    ]
+  },
+  {
+    "id": "n020",
+    "namn": "Sofiero slott och slottsträdgård",
+    "typ": "Slott och park",
+    "kategori": "Historia",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=720",
+    "intro": "Slott med park och promenadstråk.",
+    "beskrivning": "Sofiero slott och slottsträdgård är en slottspark i Helsingborg med promenadstråk, planteringar och utsikt mot Öresund.",
+    "utmaningar": [
+      {
+        "id": "n020-u1",
+        "text": "Hitta en lugn del av parken vid Sofiero slott och slottsträdgård"
+      },
+      {
+        "id": "n020-u2",
+        "text": "Hitta en utsikt mot vatten vid Sofiero slott och slottsträdgård"
+      },
+      {
+        "id": "n020-u3",
+        "text": "Hitta en trädallé vid Sofiero slott och slottsträdgård"
+      },
+      {
+        "id": "n020-u4",
+        "text": "Hitta en rak gångväg vid Sofiero slott och slottsträdgård"
+      },
+      {
+        "id": "n020-u5",
+        "text": "Hitta en planteringsyta med många färger vid Sofiero slott och slottsträdgård"
+      }
+    ]
+  },
+  {
+    "id": "n021",
+    "namn": "Hovdala slott och naturreservat",
+    "typ": "Slott och natur",
+    "kategori": "Historia",
+    "adress": "Hässleholm, Skåne",
+    "bild": "https://picsum.photos/800/500?random=721",
+    "intro": "Slott i kombination med natur i området.",
+    "beskrivning": "Hovdala slott och naturreservat är en historisk slottsmiljö vid skog och stigar nära Hässleholm.",
+    "utmaningar": [
+      {
+        "id": "n021-u1",
+        "text": "Hitta en utsiktspunkt nära Hovdala slott och naturreservat"
+      },
+      {
+        "id": "n021-u2",
+        "text": "Hitta en skogsstig nära Hovdala slott och naturreservat"
+      },
+      {
+        "id": "n021-u3",
+        "text": "Hitta en byggnadsdetalj som ser gammal ut vid Hovdala slott och naturreservat"
+      },
+      {
+        "id": "n021-u4",
+        "text": "Hitta en rastplats nära Hovdala slott och naturreservat"
+      },
+      {
+        "id": "n021-u5",
+        "text": "Hitta en plats nära vatten vid Hovdala slott och naturreservat"
+      }
+    ]
+  },
+  {
+    "id": "n022",
+    "namn": "Kullens fyr",
+    "typ": "Fyr och utsikt",
+    "kategori": "Utflykt",
+    "adress": "Kullaberg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=722",
+    "intro": "Fyr med havsutsikt.",
+    "beskrivning": "Kullens fyr är en fyrplats på Kullahalvön med utsikt över havet och närhet till klippterräng.",
+    "utmaningar": [
+      {
+        "id": "n022-u1",
+        "text": "Hitta en plats där fyren syns tydligt vid Kullens fyr"
+      },
+      {
+        "id": "n022-u2",
+        "text": "Hitta en plats där vinden är stark vid Kullens fyr"
+      },
+      {
+        "id": "n022-u3",
+        "text": "Hitta en plats med fri horisont vid Kullens fyr"
+      },
+      {
+        "id": "n022-u4",
+        "text": "Hitta en klippa som känns hög vid Kullens fyr"
+      },
+      {
+        "id": "n022-u5",
+        "text": "Hitta en stig som leder mot utsikten vid Kullens fyr"
+      }
+    ]
+  },
+  {
+    "id": "n023",
+    "namn": "Skåneleden",
+    "typ": "Vandringsleder",
+    "kategori": "Leder",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=723",
+    "intro": "Markerade vandringsleder genom varierade miljöer.",
+    "beskrivning": "Skåneleden är ett nät av markerade vandringsleder som passerar genom skiftande naturmiljöer i hela Skåne.",
+    "utmaningar": [
+      {
+        "id": "n023-u1",
+        "text": "Hitta en orange ledmarkering vid Skåneleden"
+      },
+      {
+        "id": "n023-u2",
+        "text": "Hitta en bro eller spång längs Skåneleden"
+      },
+      {
+        "id": "n023-u3",
+        "text": "Hitta en sträcka som går nära vatten längs Skåneleden"
+      },
+      {
+        "id": "n023-u4",
+        "text": "Hitta en vägvisare med ledriktning vid Skåneleden"
+      },
+      {
+        "id": "n023-u5",
+        "text": "Hitta en rastplats längs Skåneleden"
+      },
+      {
+        "id": "n023-u6",
+        "text": "Hitta en sträcka som går genom skog längs Skåneleden"
+      },
+      {
+        "id": "n023-u7",
+        "text": "Hitta en tydlig detalj vid Skåneleden (1)"
+      }
+    ]
+  },
+  {
+    "id": "n024",
+    "namn": "Kattegattleden",
+    "typ": "Nationell cykelled",
+    "kategori": "Leder",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=724",
+    "intro": "Skyltad cykelled med flera stopp längs rutten.",
+    "beskrivning": "Kattegattleden är en skyltad cykelled som följer västkusten och passerar kustmiljöer och tätorter.",
+    "utmaningar": [
+      {
+        "id": "n024-u1",
+        "text": "Hitta en sträcka med skog nära Kattegattleden"
+      },
+      {
+        "id": "n024-u2",
+        "text": "Hitta en rödvit cykelledsskylt nära Kattegattleden"
+      },
+      {
+        "id": "n024-u3",
+        "text": "Hitta en rastplats nära Kattegattleden"
+      },
+      {
+        "id": "n024-u4",
+        "text": "Hitta en sträcka med öppna fält nära Kattegattleden"
+      },
+      {
+        "id": "n024-u5",
+        "text": "Hitta en kustutsikt nära Kattegattleden"
+      }
+    ]
+  },
+  {
+    "id": "n025",
+    "namn": "Sydkustleden",
+    "typ": "Cykelled",
+    "kategori": "Leder",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=725",
+    "intro": "Cykelrutt för utflykt i Skåne.",
+    "beskrivning": "Sydkustleden är en cykelled som binder samman kustnära platser längs Skånes sydkust.",
+    "utmaningar": [
+      {
+        "id": "n025-u1",
+        "text": "Hitta en rastplats nära Sydkustleden"
+      },
+      {
+        "id": "n025-u2",
+        "text": "Hitta en kustnära sträcka nära Sydkustleden"
+      },
+      {
+        "id": "n025-u3",
+        "text": "Hitta en sträcka med utsikt nära Sydkustleden"
+      },
+      {
+        "id": "n025-u4",
+        "text": "Hitta en väg med lite biltrafik nära Sydkustleden"
+      },
+      {
+        "id": "n025-u5",
+        "text": "Hitta en sträcka med trädallé nära Sydkustleden"
+      }
+    ]
+  },
+  {
+    "id": "n026",
+    "namn": "Sydostleden",
+    "typ": "Nationell cykelled",
+    "kategori": "Leder",
+    "adress": "Simrishamn, Skåne",
+    "bild": "https://picsum.photos/800/500?random=726",
+    "intro": "Skyltad cykelled med flera stopp längs rutten.",
+    "beskrivning": "Sydostleden är en skyltad cykelled som utgår från sydöstra Skåne och går genom varierat landskap.",
+    "utmaningar": [
+      {
+        "id": "n026-u1",
+        "text": "Hitta en rastplats nära Sydostleden"
+      },
+      {
+        "id": "n026-u2",
+        "text": "Hitta en kustutsikt nära Sydostleden"
+      },
+      {
+        "id": "n026-u3",
+        "text": "Hitta en sträcka med öppna fält nära Sydostleden"
+      },
+      {
+        "id": "n026-u4",
+        "text": "Hitta en bilfri sträcka nära Sydostleden"
+      },
+      {
+        "id": "n026-u5",
+        "text": "Hitta en sträcka med skog nära Sydostleden"
+      }
+    ]
+  },
+  {
+    "id": "n027",
+    "namn": "Cykelleden Skåne",
+    "typ": "Regional cykelled",
+    "kategori": "Leder",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=727",
+    "intro": "Regional cykelled uppdelad i etapper.",
+    "beskrivning": "Cykelleden Skåne är ett regionalt ledsystem med etapper som korsar Skåne mellan kust, skog och landsbygd.",
+    "utmaningar": [
+      {
+        "id": "n027-u1",
+        "text": "Hitta en etappstart längs Cykelleden Skåne"
+      },
+      {
+        "id": "n027-u2",
+        "text": "Hitta en sträcka genom en by längs Cykelleden Skåne"
+      },
+      {
+        "id": "n027-u3",
+        "text": "Hitta en rastplats längs Cykelleden Skåne"
+      },
+      {
+        "id": "n027-u4",
+        "text": "Hitta en sträcka med trädallé längs Cykelleden Skåne"
+      },
+      {
+        "id": "n027-u5",
+        "text": "Hitta en cykelledsskylt längs Cykelleden Skåne"
+      }
+    ]
+  },
+  {
+    "id": "n028",
+    "namn": "Skånes Djurpark",
+    "typ": "Djurpark",
+    "kategori": "Barn",
+    "adress": "Jularp 150, 243 93 Höör, Skåne",
+    "bild": "https://picsum.photos/800/500?random=728",
+    "intro": "Djurpark med nordiska djur.",
+    "beskrivning": "Skånes Djurpark är en stor djurpark i mitten av Skåne med fokus på nordiska djur i stora hägn.",
+    "utmaningar": [
+      {
+        "id": "n028-u1",
+        "text": "Hitta en skylt med djurfakta vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u2",
+        "text": "Hitta en lekplats i området vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u3",
+        "text": "Hitta en inhägnad med djur vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u4",
+        "text": "Hitta en utsiktspunkt över ett hägn vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u5",
+        "text": "Hitta en plats där du hör djurljud vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u6",
+        "text": "Hitta en tydlig park-karta vid Skånes Djurpark"
+      },
+      {
+        "id": "n028-u7",
+        "text": "Hitta en tydlig detalj vid Skånes Djurpark (1)"
+      }
+    ]
+  },
+  {
+    "id": "n029",
+    "namn": "Tosselilla Sommarland",
+    "typ": "Nöjespark",
+    "kategori": "Barn",
+    "adress": "Svampakorset, 273 97 Tomelilla, Skåne",
+    "bild": "https://picsum.photos/800/500?random=729",
+    "intro": "Nöjespark med aktiviteter för en hel dag.",
+    "beskrivning": "Tosselilla Sommarland är en nöjespark på Österlen med vattenlek och attraktioner för en heldag.",
+    "utmaningar": [
+      {
+        "id": "n029-u1",
+        "text": "Hitta en skylt med park-karta vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u2",
+        "text": "Hitta en lekzon vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u3",
+        "text": "Hitta en lugn gräsyta vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u4",
+        "text": "Hitta en vattenattraktion vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u5",
+        "text": "Hitta en tydlig entré vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u6",
+        "text": "Hitta en karusell vid Tosselilla Sommarland"
+      },
+      {
+        "id": "n029-u7",
+        "text": "Hitta en tydlig detalj vid Tosselilla Sommarland (1)"
+      }
+    ]
+  },
+  {
+    "id": "n030",
+    "namn": "Tumlarsafari vid Kullaberg",
+    "typ": "Båttur",
+    "kategori": "Utflykt",
+    "adress": "Mölle, Skåne",
+    "bild": "https://picsum.photos/800/500?random=730",
+    "intro": "Båttur med fokus på kustupplevelse.",
+    "beskrivning": "Tumlarsafari vid Kullaberg är en båttur med fokus på att se tumlare och kustlandskap från vattnet.",
+    "utmaningar": [
+      {
+        "id": "n030-u1",
+        "text": "Hitta en informationspunkt för turen vid Tumlarsafari vid Kullaberg"
+      },
+      {
+        "id": "n030-u2",
+        "text": "Hitta en plats där du ser havet vid Tumlarsafari vid Kullaberg"
+      },
+      {
+        "id": "n030-u3",
+        "text": "Hitta en plats där vågor syns tydligt vid Tumlarsafari vid Kullaberg"
+      },
+      {
+        "id": "n030-u4",
+        "text": "Hitta en utsikt mot klippor vid Tumlarsafari vid Kullaberg"
+      },
+      {
+        "id": "n030-u5",
+        "text": "Hitta en brygga kopplad till Tumlarsafari vid Kullaberg"
+      }
+    ]
+  },
+  {
+    "id": "n031",
+    "namn": "Alpackatrekking",
+    "typ": "Djurupplevelse",
+    "kategori": "Utflykt",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=731",
+    "intro": "Djuraktivitet i naturnära miljö.",
+    "beskrivning": "Alpackatrekking är en djuraktivitet där man går en tur i naturmiljö tillsammans med alpackor.",
+    "utmaningar": [
+      {
+        "id": "n031-u1",
+        "text": "Hitta en samlingsplats vid Alpackatrekking"
+      },
+      {
+        "id": "n031-u2",
+        "text": "Hitta en skogsstig som passar promenad vid Alpackatrekking"
+      },
+      {
+        "id": "n031-u3",
+        "text": "Hitta ett öppet fält vid Alpackatrekking"
+      },
+      {
+        "id": "n031-u4",
+        "text": "Hitta en skylt som visar aktivitet vid Alpackatrekking"
+      },
+      {
+        "id": "n031-u5",
+        "text": "Hitta en grind eller inhägnad vid Alpackatrekking"
+      }
+    ]
+  },
+  {
+    "id": "n032",
+    "namn": "Lammsafari",
+    "typ": "Djurupplevelse",
+    "kategori": "Utflykt",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=732",
+    "intro": "Djuraktivitet i naturnära miljö.",
+    "beskrivning": "Lammsafari är en djuraktivitet i lantlig miljö med fokus på får och lamm.",
+    "utmaningar": [
+      {
+        "id": "n032-u1",
+        "text": "Hitta en skogsstig som passar promenad vid Lammsafari"
+      },
+      {
+        "id": "n032-u2",
+        "text": "Hitta en grind eller inhägnad vid Lammsafari"
+      },
+      {
+        "id": "n032-u3",
+        "text": "Hitta en samlingsplats vid Lammsafari"
+      },
+      {
+        "id": "n032-u4",
+        "text": "Hitta en skylt som visar aktivitet vid Lammsafari"
+      },
+      {
+        "id": "n032-u5",
+        "text": "Hitta ett öppet fält vid Lammsafari"
+      }
+    ]
+  },
+  {
+    "id": "n033",
+    "namn": "Fladdermussafari",
+    "typ": "Naturupplevelse",
+    "kategori": "Utflykt",
+    "adress": "Skåne",
+    "bild": "https://picsum.photos/800/500?random=733",
+    "intro": "Naturupplevelse som fungerar särskilt bra kvällstid.",
+    "beskrivning": "Fladdermussafari är en naturaktivitet som brukar genomföras kvällstid med fokus på fladdermöss.",
+    "utmaningar": [
+      {
+        "id": "n033-u1",
+        "text": "Hitta en plats utan starka lampor vid Fladdermussafari"
+      },
+      {
+        "id": "n033-u2",
+        "text": "Hitta en plats där det känns extra tyst vid Fladdermussafari"
+      },
+      {
+        "id": "n033-u3",
+        "text": "Hitta ett öppet område med fri sikt uppåt vid Fladdermussafari"
+      },
+      {
+        "id": "n033-u4",
+        "text": "Hitta en skogskant vid Fladdermussafari"
+      },
+      {
+        "id": "n033-u5",
+        "text": "Hitta en plats med fri himmel vid Fladdermussafari"
+      }
+    ]
+  },
+  {
+    "id": "n034",
+    "namn": "Västra Hamnen",
+    "typ": "Stadsområde",
+    "kategori": "Utflykt",
+    "adress": "Malmö, Skåne",
+    "bild": "https://picsum.photos/800/500?random=734",
+    "intro": "Stadsområde att promenera i.",
+    "beskrivning": "Västra Hamnen är ett modernt kustnära område i Malmö med promenadstråk och tydlig stadssilhuett.",
+    "utmaningar": [
+      {
+        "id": "n034-u1",
+        "text": "Hitta en plats med tydlig skyline i Västra Hamnen"
+      },
+      {
+        "id": "n034-u2",
+        "text": "Hitta en modern byggnad i Västra Hamnen"
+      },
+      {
+        "id": "n034-u3",
+        "text": "Hitta en brygga eller kaj i Västra Hamnen"
+      },
+      {
+        "id": "n034-u4",
+        "text": "Hitta en plats nära vattnet i Västra Hamnen"
+      },
+      {
+        "id": "n034-u5",
+        "text": "Hitta en promenadsträcka med utsikt i Västra Hamnen"
+      }
+    ]
+  },
+  {
+    "id": "n035",
+    "namn": "Lilla Torg",
+    "typ": "Stadsmiljö",
+    "kategori": "Utflykt",
+    "adress": "Malmö, Skåne",
+    "bild": "https://picsum.photos/800/500?random=735",
+    "intro": "Stadskärna med torg och gator.",
+    "beskrivning": "Lilla Torg är ett centralt torgområde i Malmö med kullerstensgator och tät stadsmiljö.",
+    "utmaningar": [
+      {
+        "id": "n035-u1",
+        "text": "Hitta en byggnad med tydlig fasad vid Lilla Torg"
+      },
+      {
+        "id": "n035-u2",
+        "text": "Hitta en liten innergård nära Lilla Torg"
+      },
+      {
+        "id": "n035-u3",
+        "text": "Hitta en lugn sidogata nära Lilla Torg"
+      },
+      {
+        "id": "n035-u4",
+        "text": "Hitta en kullerstensgata vid Lilla Torg"
+      },
+      {
+        "id": "n035-u5",
+        "text": "Hitta en uteservering vid Lilla Torg"
+      }
+    ]
+  },
+  {
+    "id": "n036",
+    "namn": "Stortorget och domkyrkans kvarter",
+    "typ": "Stadsmiljö",
+    "kategori": "Utflykt",
+    "adress": "Lund, Skåne",
+    "bild": "https://picsum.photos/800/500?random=736",
+    "intro": "Stadskärna med torg och gator.",
+    "beskrivning": "Stortorget och domkyrkans kvarter är ett centralt område i Lund med torgmiljö och historisk stadskärna.",
+    "utmaningar": [
+      {
+        "id": "n036-u1",
+        "text": "Hitta en liten innergård nära Stortorget och domkyrkans kvarter"
+      },
+      {
+        "id": "n036-u2",
+        "text": "Hitta en uteservering vid Stortorget och domkyrkans kvarter"
+      },
+      {
+        "id": "n036-u3",
+        "text": "Hitta en byggnad med tydlig fasad vid Stortorget och domkyrkans kvarter"
+      },
+      {
+        "id": "n036-u4",
+        "text": "Hitta en lugn sidogata nära Stortorget och domkyrkans kvarter"
+      },
+      {
+        "id": "n036-u5",
+        "text": "Hitta en kullerstensgata vid Stortorget och domkyrkans kvarter"
+      }
+    ]
+  },
+  {
+    "id": "n037",
+    "namn": "Helsingborgs strandpromenad",
+    "typ": "Promenad",
+    "kategori": "Utflykt",
+    "adress": "Helsingborg, Skåne",
+    "bild": "https://picsum.photos/800/500?random=737",
+    "intro": "Promenadsträcka längs vatten eller stadsmiljö.",
+    "beskrivning": "Helsingborgs strandpromenad är en promenadsträcka längs vattnet med utsikt över sundet.",
+    "utmaningar": [
+      {
+        "id": "n037-u1",
+        "text": "Hitta en plats med vind från havet vid Helsingborgs strandpromenad"
+      },
+      {
+        "id": "n037-u2",
+        "text": "Hitta en bänk med utsikt vid Helsingborgs strandpromenad"
+      },
+      {
+        "id": "n037-u3",
+        "text": "Hitta en sträcka med havsutsikt vid Helsingborgs strandpromenad"
+      },
+      {
+        "id": "n037-u4",
+        "text": "Hitta en lång rak gångväg vid Helsingborgs strandpromenad"
+      },
+      {
+        "id": "n037-u5",
+        "text": "Hitta en plats där du ser båtar vid Helsingborgs strandpromenad"
+      }
+    ]
+  },
+  {
+    "id": "n038",
+    "namn": "Kåseberga hamn",
+    "typ": "Fiskeläge",
+    "kategori": "Strand",
+    "adress": "Kåseberga, Skåne",
+    "bild": "https://picsum.photos/800/500?random=738",
+    "intro": "Fiskeläge med hamn och kustkänsla.",
+    "beskrivning": "Kåseberga hamn är ett litet fiskeläge med hamnmiljö och kustutsikt, nedanför höjderna vid Ales stenar.",
+    "utmaningar": [
+      {
+        "id": "n038-u1",
+        "text": "Hitta en skylt med ortnamn vid Kåseberga hamn"
+      },
+      {
+        "id": "n038-u2",
+        "text": "Hitta en plats med brygga vid Kåseberga hamn"
+      },
+      {
+        "id": "n038-u3",
+        "text": "Hitta en utsikt mot havet vid Kåseberga hamn"
+      },
+      {
+        "id": "n038-u4",
+        "text": "Hitta en hamnplats med båtar vid Kåseberga hamn"
+      },
+      {
+        "id": "n038-u5",
+        "text": "Hitta en stig upp från hamnen vid Kåseberga hamn"
+      }
+    ]
+  },
+  {
+    "id": "n039",
+    "namn": "Österlen kustvägar",
+    "typ": "Scenisk bil- och cykeltur",
+    "kategori": "Leder",
+    "adress": "Österlen, Skåne",
+    "bild": "https://picsum.photos/800/500?random=739",
+    "intro": "Vacker sträcka att köra eller cykla.",
+    "beskrivning": "Österlen kustvägar syftar på de mindre vägarna genom Österlens kustlandskap med vyer över fält och hav.",
+    "utmaningar": [
+      {
+        "id": "n039-u1",
+        "text": "Hitta en kurvig väg vid Österlen kustvägar"
+      },
+      {
+        "id": "n039-u2",
+        "text": "Hitta en utsikt mot havet vid Österlen kustvägar"
+      },
+      {
+        "id": "n039-u3",
+        "text": "Hitta en plats med gårdar längs vägen vid Österlen kustvägar"
+      },
+      {
+        "id": "n039-u4",
+        "text": "Hitta en vägsträcka med böljande landskap vid Österlen kustvägar"
+      },
+      {
+        "id": "n039-u5",
+        "text": "Hitta en allé av träd vid Österlen kustvägar"
+      }
+    ]
+  },
+  {
+    "id": "n040",
+    "namn": "Ålakusten",
+    "typ": "Kuststräcka",
+    "kategori": "Strand",
+    "adress": "Kristianstad-Österlen, Skåne",
+    "bild": "https://picsum.photos/800/500?random=740",
+    "intro": "Lång kuststräcka med flera möjliga stopp.",
+    "beskrivning": "Ålakusten är en lång kuststräcka på östkusten med sandstränder och flera bad- och strandmiljöer.",
+    "utmaningar": [
+      {
+        "id": "n040-u1",
+        "text": "Hitta en plats där vinden känns tydligt vid Ålakusten"
+      },
+      {
+        "id": "n040-u2",
+        "text": "Hitta en stranddel med långgrunt vatten vid Ålakusten"
+      },
+      {
+        "id": "n040-u3",
+        "text": "Hitta en plats där sand möter hav vid Ålakusten"
+      },
+      {
+        "id": "n040-u4",
+        "text": "Hitta en plats med sanddyner vid Ålakusten"
+      },
+      {
+        "id": "n040-u5",
+        "text": "Hitta en plats med öppen horisont vid Ålakusten"
+      }
     ]
   }
 ]
