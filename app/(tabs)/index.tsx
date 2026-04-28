@@ -311,22 +311,6 @@ export default function HomeScreen() {
     );
   }, [devResetEverything]);
 
-  const labelBoxStyle = {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-    backgroundColor: "rgba(255, 249, 239, 0.95)",
-    borderWidth: 1,
-    borderColor: "rgba(47,37,27,0.25)",
-    maxWidth: 160,
-  };
-
-  const labelTextStyle = {
-    color: "#1E1A16",
-    fontSize: 12,
-    fontWeight: "800" as const,
-  };
-
   return (
     <SafeAreaView className="flex-1 bg-[#2A221A]" edges={["top"]}>
       <ScrollView className="flex-1 bg-[#6B4E2E] px-4 pt-8" keyboardShouldPersistTaps="handled">
@@ -608,8 +592,8 @@ export default function HomeScreen() {
                       centerOffset={{ x: 0, y: -30 }}
                     >
                       <View pointerEvents="none" style={{ alignItems: "center" }}>
-                        <View style={labelBoxStyle}>
-                          <Text numberOfLines={1} style={labelTextStyle}>
+                        <View  className="px-2 py-1 rounded-full max-w-[160px] bg-[#fff9ef]/95 border border-[rgba(47,37,27,0.25)]">
+                          <Text numberOfLines={1} className="text-[10px] font-extrabold text-[#1E1A16]">
                             Du är här
                           </Text>
                         </View>
@@ -663,7 +647,7 @@ export default function HomeScreen() {
                             numberOfLines={1}
                             style={{
                               color: "#1E1A16",
-                              fontSize: 12,
+                              fontSize: 10,
                               fontWeight: "800",
                             }}
                           >
