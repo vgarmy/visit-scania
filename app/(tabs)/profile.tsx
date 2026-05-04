@@ -4,7 +4,6 @@ import * as ImagePicker from "expo-image-picker";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useMemo, useState } from "react";
 import { Alert, Image, Pressable, ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import { BADGES } from "../../lib/badgeDefinitions";
 import { getUnlockedBadges, type UnlockedBadges } from "../../lib/badgeStorage";
@@ -286,7 +285,7 @@ export default function ProfileScreen() {
   const rotC = -1;
 
   return (
-    <SafeAreaView className="flex-1 bg-[#2A221A]" edges={["top"]}>
+    <View className="flex-1 bg-[#2A221A]">
       <ScrollView className="flex-1 bg-[#6B4E2E] px-4 pt-8">
         {/* Header note */}
         <View
@@ -530,6 +529,6 @@ export default function ProfileScreen() {
           </Text>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
